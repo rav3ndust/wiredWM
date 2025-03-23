@@ -13,8 +13,8 @@ set $mod Mod4
 
 # - - - this is sway specific: - - -
 # XXX it is also being tested, so comment it out when not using it. 
-exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway XDG_SESSION_DESKTOP=sway
-exec systemctl --user import-environment
+#exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway XDG_SESSION_DESKTOP=sway
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec swaybg -i $HOME/wiredWM/wp/lain-twin.png &
 #exec killall swaybar; waybar &
 
@@ -49,6 +49,8 @@ client.unfocused 	#000000   #000000    #ff3131
 #font pango:Cantarell 10
 #font pango:Inter 10
 font pango:Quicksand 10
+#font pango:Poppins 10
+##############################################################################
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -110,24 +112,26 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal.
-# Our four installed terminal emulators are "st", "xterm", "kitty" and "alacritty." Each are lightweight.
+# Our installed terminal emulators are "st", "gnome-terminal", "konsole", "kitty" and "alacritty."
+# Choose which one works best for you!
 bindsym $mod+Return exec st
 #bindsym $mod+Return exec kitty
 #bindsym $mod+Return exec alacritty
-#bindsym $mod+Return exec xterm
+#bindsym $mod+Return exec gnome-terminal
+#bindsym $mod+Return exec konsole
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start applications and run commands (your choice of dmenu or rofi)
 # start dmenu (a program launcher) - nightshade customized dmenu
-bindsym $mod+d exec dmenu_run -fn "Quicksand-10" -nb black -nf pink -sb green -sf red -p "nightshade - run command: " -b
+bindsym $mod+d exec dmenu_run -fn "Quicksand-10" -nb black -nf pink -sb green -sf red -p "nightshade - run command: " 
 # rofi version of the above
 #bindsym $mod+d exec --no-startup-id "rofi -show run -theme purple -font 'Quicksand Bold 10'"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+Shift+a exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -fn "Quicksand-10" -b -i -nb black -nf pink -sb green -sf red -p "nightshade - Applications List: "' 
+bindsym $mod+Shift+a exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -fn "Quicksand-10" -i -nb black -nf pink -sb green -sf red -p "nightshade - Applications List: "' 
 # rofi version of the above.
 #bindsym $mod+Shift+a exec --no-startup-id "rofi -show drun -theme purple -font 'Quicksand Bold 10'"
 
@@ -146,6 +150,9 @@ bindsym $mod+c exec --no-startup-id "gsimplecal"
 
 # add a popup notification showing when Caps_Lock has been pressed
 bindsym Caps_Lock exec --no-startup-id "notify-send 'wired helper' 'Caps Lock pressed.'"
+
+# add a keybinding for quick screenshots (currently using `flameshot gui` for this functionality
+bindsym $mod+p exec --no-startup-id "flameshot gui"
 
 # change focus
 bindsym $mod+j focus left
@@ -287,6 +294,7 @@ bar {
 	#font pango:Inter 10
 	#font pango:ubuntu-title 11 
 	font pango:Quicksand Bold 10 
+	#font pango:Poppins 10
 	colors {
 		focused_workspace #ff10f0 #000000 #39FF14
 		inactive_workspace #000000 #000000 #ff3131
