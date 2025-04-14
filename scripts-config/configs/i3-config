@@ -32,6 +32,7 @@ smart_gaps on
 smart_borders on
 # - - manual gaps.
 # You can manually adjust their values below, if you choose to set them.
+gaps inner 4
 #gaps inner 7
 #gaps outer 5 
 
@@ -112,13 +113,13 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal.
-# Our installed terminal emulators are "st", "gnome-terminal", "konsole", "kitty" and "alacritty."
+# Our installed terminal emulators are "st", "gnome-terminal", "mate-terminal", "kitty" and "alacritty."
 # Choose which one works best for you!
 bindsym $mod+Return exec st
 #bindsym $mod+Return exec kitty
 #bindsym $mod+Return exec alacritty
 #bindsym $mod+Return exec gnome-terminal
-#bindsym $mod+Return exec konsole
+#bindsym $mod+Return exec mate-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
