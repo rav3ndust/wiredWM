@@ -26,7 +26,7 @@ exec swaybg -i $HOME/wiredWM/wp/lain-twin.png &
 # (for no titlebars (except when windows are tabbed/stacked)):
 #for_window [class="^.*"] border pixel 4 
 # (for always-on titlebars:
-for_window [class="^.*"] border normal
+for_window [class="^.*"] border normal 4
 # > select which option for borders you want by commenting the appropriate options out
 
 # - - for gaps - - 
