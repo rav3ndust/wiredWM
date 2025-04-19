@@ -3,7 +3,7 @@
 ![image](https://github.com/user-attachments/assets/fd1b626b-f8be-49d1-97fc-a5b322157185)
 ###### nightshade-tmux in action
 
-This is documentation on our `tmux` setup, which is based closely off of the aesthetics and feel of **WiredWM**.
+This is documentation on our `tmux` setup, which is based closely off of the aesthetics and feel of [wiredWM](https://rav3ndust.xyz/wiki/wiredWM.HTML).
 
 We have some custom keybindings we have setup that are adapted from wiredWM, and you will also notice that our tmux configuration uses the **nightshadeNeon** color scheme.
 
