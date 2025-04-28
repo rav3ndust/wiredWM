@@ -35,6 +35,7 @@
 # - we use *xscreensaver* for handling screensaver functionality and auto-locking.
 # - we use *xss-lock* for an additional screen locking utility to run i3lock-fancy.
 # - we use *meteo-qt* for displaying weather info in the i3bar.
+# - we use *gsimplecal* as a floating calendar that's accessible when pressing meta+c 
 # - we also add *calcurse* for tracking appointments and `TODO`s in the terminal.
 # - - - - - - - - - - - - - - - 
 # wayland-specific stuff
@@ -76,7 +77,7 @@ makeFolders () {
 install_wired_pkgs () {	
 	# this function updates and intalls the needed deps for wiredWM
 	sudo apt-get update
-	sudo apt-get install -y i3 i3lock-fancy nitrogen pulseaudio-utils xterm calcurse arandr rofi xss-lock feh volumeicon-alsa polybar blueman dunst flameshot meteo-qt pasystray ffmpeg kitty stterm surf conky suckless-tools lxpolkit lxappearance vim nnn cmus xscreensaver amfora sway swaylock swaybg grimshot xdg-desktop-portal-wlr qt5-ct waybar wf-recorder
+	sudo apt-get install -y i3 i3lock-fancy nitrogen pulseaudio-utils xcompmgr slock alacritty fonts-inter xterm calcurse arandr rofi xss-lock feh volumeicon-alsa polybar blueman dunst flameshot meteo-qt pasystray ffmpeg kitty stterm surf conky suckless-tools lxpolkit lxappearance vim nnn cmus xscreensaver amfora sway swaylock swaybg grimshot xdg-desktop-portal-wlr qt5-ct waybar wf-recorder gsimplecal calcurse
 } 
 apply_configs () {
 	# this function applies the configs for: 
@@ -121,9 +122,9 @@ apply_configs () {
   		# applies the nslock script to /usr/bin. is only used on wayland.
 		local nslock_script="$HOME/wiredWM/scripts-config/locker-scripts/nslock.sh"
   		local nslock_exec_location="/usr/bin/nslock"
-    		echo "Applying nslock to $nslock_exec_location..."; sleep 1 
+    	echo "Applying nslock to $nslock_exec_location..."; sleep 1 
   		chmod +x $nslock_script; sudo cp $nslock_script $nslock_exec_location
-    		echo "Done."; sleep 1
+    	echo "Done."; sleep 1
   	}
    	apply_nslock
 }
@@ -167,4 +168,3 @@ main () {
 # Script Entry Point
 ########################################################
 main
-# TODO more testing on a few new installations.
