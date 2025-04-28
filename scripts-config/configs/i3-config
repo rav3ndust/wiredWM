@@ -13,8 +13,8 @@ set $mod Mod4
 
 # - - - this is sway specific: - - -
 # XXX it is also being tested, so comment it out when not using it. 
-#exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway XDG_SESSION_DESKTOP=sway
-exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway XDG_SESSION_DESKTOP=sway
+#exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec swaybg -i $HOME/wiredWM/wp/lain-twin.png &
 #exec killall swaybar; waybar &
 
@@ -36,7 +36,7 @@ smart_gaps on
 smart_borders on
 # - - manual gaps.
 # You can manually adjust their values below, if you choose to set them.
-gaps inner 4
+#gaps inner 3
 #gaps inner 7
 #gaps outer 5 
 
@@ -60,6 +60,9 @@ font pango:Inter Bold 10
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
+
+# store secrets for applications
+exec --no-startup-id sh -c 'eval $(/usr/bin/gnome-keyring-daemon --start --components=secrets,pkcs11,ssh) && export SSH_AUTH_SOCK'
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -118,11 +121,12 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal.
-# Our installed terminal emulators are "st", "gnome-terminal", "mate-terminal", "kitty" and "alacritty."
+# Our installed terminal emulators are "st", "xterm", "gnome-terminal", "mate-terminal", "kitty" and "alacritty."
 # Choose which one works best for you!
-bindsym $mod+Return exec st
+#bindsym $mod+Return exec st
+#bindsym $mod+Return exec xterm
 #bindsym $mod+Return exec kitty
-#bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec alacritty
 #bindsym $mod+Return exec gnome-terminal
 #bindsym $mod+Return exec mate-terminal
 
@@ -248,12 +252,12 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # quickly lock the display. we use `i3lock-fancy` for this.
-bindsym $mod+Shift+z exec "i3lock-fancy"
+bindsym $mod+Shift+z exec "i3lock -c 000000"
 # reload the configuration file
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# restart wiredWM inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
+# exit wiredWM (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit command detected. Are you sure you would like to logout of wiredWM? This X session will be closed.' -B 'Yes, log out of wiredWM' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
@@ -314,12 +318,12 @@ exec --no-startup-id conky
 
 # we're using xautolock+i3lock to lock the screen after 10 mins of inactivity. The screen will blank and you'll be prompted for your password.
 # you can change the lock time by editing the number behind the -time flag. You can also edit the color of the lock screen using hexadecimal. Right now, it is set to purple (6a0dad)
-#exec "xautolock -detectsleep -time 10 -locker \"i3 lock -c 6a0dad --show-failed-attempts\""
+exec xautolock -detectsleep -time 10 -locker "i3lock -c 000000"
 # We're using xscreensaver to handle screensaving and autolock.
 #exec --no-startup-id xscreensaver
 
 # we want to start the gnome-keyring-daemon so we can store secrets for browsers and other applications.
-exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
+#exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 
 # ensure proper kb layout
 exec "setxkbmap -layout us,de"
@@ -333,3 +337,4 @@ default_border pixel 3
 # You can use this section for special commands you might need to run on your local machine.
 # For uniformity, please don't commit anything below this line to the public repo.
 ###################################
+
