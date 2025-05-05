@@ -1,6 +1,6 @@
 /* main stylesheet for wiredWM's 'waybar configuration'
- *
- * this file should live at /etc/xdg/waybar/style.css */
+ *	- by rav3ndust
+ * a copy of this file should live at /etc/xdg/waybar/style.css */
 * {
     font-size: 10px; /* Font size for better readability */
     font-family: Inter;
