@@ -37,12 +37,16 @@
 # - we use *meteo-qt* for displaying weather info in the i3bar.
 # - we use *gsimplecal* as a floating calendar that's accessible when pressing meta+c 
 # - we also add *calcurse* for tracking appointments and `TODO`s in the terminal.
+# - *tty-clock* is here as a simple, terminal-based clock (used as a clickable element in waybar)
+# - we include *fonts-inter* for our fonts
+# - we include *pavucontrol* as another way to graphically adjust the volume
 # - - - - - - - - - - - - - - - 
 # wayland-specific stuff
 # - we are using, of course, sway to base all of our wired configs on
 # - *swaybg* handles what nitrogen normally would, backgrounds/wallpapers
 # - *waybar*, heavily configured, handles our status bar needs
 # - *grimshot* and *flameshot* are both here
+# - *calcurse can be used by clicking on the date in waybar
 # - *xdg-desktop-portal-wlr* handles wlroots desktop portals
 # - we have our wrapper around *swaylock* called *nslock* which is a custom lockscreen
 # - we include *wf-recorder* for recording the screen
@@ -60,6 +64,10 @@ WIRED_DUNSTRC="$HOME/wiredWM/scripts-config/configs/dunstrc"
 VIM_CONFIG="$HOME/.vimrc"
 WIRED_VIM_CONFIG="$HOME/wiredWM/scripts-config/configs/vimrc" 
 DEF_WP_LOCATION="$HOME/wiredWM/wp/lain3wp.jpg"
+WAYBAR_CONFIG="$HOME/wiredWM/scripts-config/configs/wayland-config/config"
+WAYBAR_CONFIG_LOCATION="/etc/xdg/waybar/config"
+WAYBAR_CSS_CONFIG="$HOME/wiredWM/scripts-config/configs/wayland-config/style.css"
+WAYBAR_CSS_CONFIG_LOCATION="/etc/xdg/waybar/style.css"
 ########################################################
 # - - - Functions - - - 
 ########################################################
@@ -77,7 +85,7 @@ makeFolders () {
 install_wired_pkgs () {	
 	# this function updates and intalls the needed deps for wiredWM
 	sudo apt-get update
-	sudo apt-get install -y i3 i3lock-fancy nitrogen pulseaudio-utils xcompmgr slock alacritty fonts-inter xterm calcurse arandr rofi xss-lock feh volumeicon-alsa polybar blueman dunst flameshot meteo-qt pasystray ffmpeg kitty stterm surf conky suckless-tools lxpolkit lxappearance vim nnn cmus xscreensaver amfora sway swaylock swaybg grimshot xdg-desktop-portal-wlr qt5-ct waybar wf-recorder gsimplecal calcurse
+	sudo apt-get install -y i3 i3lock-fancy nitrogen pulseaudio-utils xcompmgr slock alacritty fonts-inter xterm calcurse arandr rofi xss-lock feh volumeicon-alsa polybar blueman dunst flameshot meteo-qt pasystray ffmpeg kitty stterm surf conky suckless-tools lxpolkit lxappearance vim nnn cmus xscreensaver amfora sway swaylock swaybg grimshot xdg-desktop-portal-wlr qt5-ct waybar wf-recorder gsimplecal calcurse pavucontrol
 } 
 apply_configs () {
 	# this function applies the configs for: 
@@ -86,6 +94,8 @@ apply_configs () {
 	#	- conky
 	#	- dunst
 	#	- vim
+	#	- waybar
+	#	- other wayland-specific stuff
 	# apply the i3-config file to /etc/i3/config and ~/.config/i3/config
 	echo "Copying wiredWM configuration files..."
 	sleep 1
@@ -118,13 +128,19 @@ apply_configs () {
 	sudo cp -f $WIRED_VIM_CONFIG $VIM_CONFIG
 	echo "Vim configs copied. You can change it at ~/.vimrc."
 	sleep 1 
+	# apply the waybar config and stylesheet to /etc/xdg/waybar/config and /etc/xdg/waybar/style.css respectively (wayland)
+	echo "Copying waybar configs..." && sleep 1
+	sudo cp -f $WAYBAR_CONFIG $WAYBAR_CONFIG_LOCATION		# config file copy
+	sudo cp -f $WAYBAR_CSS_CONFIG $WAYBAR_CSS_CONFIG_LOCATION	# stylesheet copy
+	echo "waybar configs copied." && sleep 1
+	# function for creating our custom lockscreen (wayland)
  	apply_nslock() {
   		# applies the nslock script to /usr/bin. is only used on wayland.
 		local nslock_script="$HOME/wiredWM/scripts-config/locker-scripts/nslock.sh"
   		local nslock_exec_location="/usr/bin/nslock"
-    	echo "Applying nslock to $nslock_exec_location..."; sleep 1 
+    		echo "Applying nslock to $nslock_exec_location..."; sleep 1 
   		chmod +x $nslock_script; sudo cp $nslock_script $nslock_exec_location
-    	echo "Done."; sleep 1
+    		echo "Done."; sleep 1
   	}
    	apply_nslock
 }
