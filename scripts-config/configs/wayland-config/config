@@ -1,5 +1,7 @@
 // -*- mode: json -*-
 // waybar config for wiredWM
+//	- by rav3ndust
+// this file should also live at /etc/xdg/waybar/config
 {
 	"layer": "top",
 	"position": "top",
@@ -15,10 +17,10 @@
 	],
 	"modules-right": [
 		"pulseaudio",
-		"memory",
+		//"memory",
 		//"cpu",
 		"battery",
-		"disk",
+		//"disk",
 		"tray"
 	],
 
@@ -90,3 +92,4 @@
 		"icon-size": 20 
 	}
 }
+
