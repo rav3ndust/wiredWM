@@ -1,0 +1,78 @@
+configuration {
+    modi: "combi";
+    combi-modi: "window,drun,run";
+    font: "Inter Bold 12";	// you can replace this with your desired font if you wish
+    show-icons: true;
+    icon-theme: "Papirus"; 	// you can replace this with your desired icon theme if you wish 
+    display-window: "Windows";
+    display-drun: "Apps";
+    display-run: "Run";
+    sidebar-mode: false;
+    kb-mode-next: "Control+Tab";
+    kb-mode-previous: "Control+Shift+Tab";
+    kb-accept-entry: "Return";
+    kb-cancel: "Escape";
+}
+
+* {
+    background: #000000;
+    foreground: #39ff14;
+    accent: #ff10f0;
+    text-color: #39ff14;
+    border-color: #ff10f0;
+    selected-background: #ff10f0;
+    selected-foreground: #000000;
+}
+
+window {
+    background-color: @background;
+    border: 2;
+    border-color: @border-color;
+    padding: 10;
+    width: 800px;
+}
+
+mainbox {
+    background-color: @background;
+    border: 0;
+    padding: 0;
+}
+
+inputbar {
+    background-color: @background;
+    text-color: @foreground;
+    border: 1;
+    border-color: @border-color;
+    padding: 8px;
+}
+
+entry {
+    background-color: @background;
+    text-color: @foreground;
+}
+
+listview {
+    background-color: @background;
+    border: 0;
+    spacing: 5px;
+    scrollbar: false;
+}
+
+element {
+    background-color: @background;
+    text-color: @foreground;
+    padding: 5px;
+}
+
+element selected {
+    background-color: @selected-background;
+    text-color: @selected-foreground;
+    border: 1;
+    border-color: @accent;
+}
+
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+    highlight: @accent; // Fixed line
+}
