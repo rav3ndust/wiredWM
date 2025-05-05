@@ -71,6 +71,20 @@ window#waybar {
     color: #ff10f0; /* Match main color scheme */
 }
 
+#network {
+    background: rgba(0, 0, 0, 0.7); /* Match the transparency of other modules */
+    border-radius: 10px; /* Ensure rounded corners */
+    padding: 3px 7px; /* Match padding of other modules */
+    margin: 0 3px; /* Match margin of other modules */
+    color: #ff10f0; /* Vibrant green to match clock and memory */
+    transition: color 0.3s; /* Smooth color transition for state changes */
+}
+
+#network.disconnected {
+    color: #ff10f0; /* Pink for disconnected state to stand out */
+}
+
+
 #memory {
     color: #39ff14; /* Match main color scheme */
 }
