@@ -1,6 +1,9 @@
+/* main stylesheet for wiredWM's 'waybar configuration'
+ *
+ * this file should live at /etc/xdg/waybar/style.css */
 * {
     font-size: 10px; /* Font size for better readability */
-    font-family: Quicksand;
+    font-family: Inter;
     font-weight: bold; /* Make all text bold */
 }
 
@@ -89,3 +92,4 @@ window#waybar {
     color: #39ff14; /* Set clock color to #39ff14 */
     font-weight: bold; /* Make clock text bold */
 }
+
