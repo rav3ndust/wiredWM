@@ -68,6 +68,8 @@ WAYBAR_CONFIG="$HOME/wiredWM/scripts-config/configs/wayland-config/config"
 WAYBAR_CONFIG_LOCATION="/etc/xdg/waybar/config"
 WAYBAR_CSS_CONFIG="$HOME/wiredWM/scripts-config/configs/wayland-config/style.css"
 WAYBAR_CSS_CONFIG_LOCATION="/etc/xdg/waybar/style.css"
+ROFI_CONFIG="$HOME/wiredWM/scripts-config/configs/rofi-config/config.rasi"
+ROFI_CONFIG_LOCATION="$HOME/.config/rofi/config.rasi"
 ########################################################
 # - - - Functions - - - 
 ########################################################
@@ -81,6 +83,7 @@ makeFolders () {
 	sudo mkdir /etc/dunst && sudo touch /etc/dunst/dunstrc
 	sudo mkdir $HOME/.config/dunst && sudo touch $HOME/.config/dunst/dunstrc
 	sudo mkdir /etc/conky && sudo touch /etc/conky/conky.conf
+ 	sudo mkdir $HOME/.config/rofi && sudo touch $HOME/.config/rofi/config.rasi 
 }
 install_wired_pkgs () {	
 	# this function updates and intalls the needed deps for wiredWM
@@ -95,6 +98,7 @@ apply_configs () {
 	#	- dunst
 	#	- vim
 	#	- waybar
+ 	#	- rofi
 	#	- other wayland-specific stuff
 	# apply the i3-config file to /etc/i3/config and ~/.config/i3/config
 	echo "Copying wiredWM configuration files..."
@@ -133,6 +137,10 @@ apply_configs () {
 	sudo cp -f $WAYBAR_CONFIG $WAYBAR_CONFIG_LOCATION		# config file copy
 	sudo cp -f $WAYBAR_CSS_CONFIG $WAYBAR_CSS_CONFIG_LOCATION	# stylesheet copy
 	echo "waybar configs copied." && sleep 1
+ 	# appy for config for rofi ($HOME/.config/rofi/config.rasi
+  	echo "Copying rofi config..." && sleep 1
+   	sudo cp -f $ROFI_CONFIG $ROFI_CONFIG_LOCATION
+    	echo "rofi config copied." && sleep 1
 	# function for creating our custom lockscreen (wayland)
  	apply_nslock() {
   		# applies the nslock script to /usr/bin. is only used on wayland.
