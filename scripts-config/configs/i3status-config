@@ -21,19 +21,21 @@ order += "battery all"
 #order += "memory"
 order += "tztime local"
 
+# = = = = = 
+
 wireless _first_ {
-        format_up = "wireless: connected"
+        format_up = "wireless: %essid"
         format_down = "wireless: down"
 }
 
 ethernet _first_ {
-        format_up = "ethernet: connected"
+        format_up = "ethernet: %essid"
         format_down = "ethernet: down"
 }
 
 battery all {
         #format = "🔋 %status %percentage %remaining"
-	format = " <span color='#ff10f0'>%percentage</span> " 
+	format = " <span color='#ff10f0'>%status %percentage</span> "  
 }
 
 #disk "/" {
@@ -51,7 +53,7 @@ battery all {
 #}
 
 tztime local {
-	# use this option for 12-hour time format
+        # use this option for 12-hour time format
         #format = "<span color='#ff9cce'> %a, %b %d %Y   %l:%M %P</span>  "
 	# use this option for 24-hour time format
 	format = "<span color='#ff9cce'> %a, %b %d %Y   %H:%M</span>  "
