@@ -15,7 +15,8 @@ set $mod Mod4
 # XXX it is also being tested, so comment it out when not using it. 
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway XDG_SESSION_DESKTOP=sway
 #exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
-exec swaybg -i $HOME/wiredWM/wp/lain-twin.png &
+exec swaybg -i $HOME/wiredWM/wp/lain4.png &
+set $PATH $PATH:/usr/games:/$HOME/.local/bin
 #exec killall swaybar; waybar &
 
 # make windows float by default.
@@ -36,7 +37,7 @@ smart_gaps on
 smart_borders on
 # - - manual gaps.
 # You can manually adjust their values below, if you choose to set them.
-#gaps inner 3
+gaps inner 3
 #gaps inner 7
 #gaps outer 5 
 
@@ -69,7 +70,7 @@ exec --no-startup-id sh -c 'eval $(/usr/bin/gnome-keyring-daemon --start --compo
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 000000 --nofork
 
 # volumeicon provides us a simple, GUI way to control volume with mouse
 # (volumeicon on arch/ubuntu/deb.)
@@ -121,12 +122,13 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal.
-# Our installed terminal emulators are "st", "xterm", "gnome-terminal", "mate-terminal", "kitty" and "alacritty."
+# Our installed terminal emulators are "foot" (amazing on wayland), "st", "xterm", "gnome-terminal", "mate-terminal", "kitty" and "alacritty."
 # Choose which one works best for you!
+bindsym $mod+Return exec foot
 #bindsym $mod+Return exec st
 #bindsym $mod+Return exec xterm
 #bindsym $mod+Return exec kitty
-bindsym $mod+Return exec alacritty
+#bindsym $mod+Return exec alacritty
 #bindsym $mod+Return exec gnome-terminal
 #bindsym $mod+Return exec mate-terminal
 
@@ -150,7 +152,8 @@ bindsym $mod+Shift+a exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -fn "I
 #bindsym $mod+Shift+a exec --no-startup-id "i3-dmenu-desktop --dmenu='rofi -dmenu'"
 
 # launch rofi - autorun, ssh, app picker.
-bindsym $mod+Shift+d exec --no-startup-id "rofi -combi -modi window,drun,run -theme purple -font 'Inter Bold 10' -show combi"
+bindsym $mod+Shift+d exec rofi -show combi -combi -modi window,drun,run -modi combi
+#bindsym $mod+Shift+d exec --no-startup-id "rofi -combi -modi window,drun,run -theme purple -font 'Inter Bold 10' -show combi"
 ######################################################################
 # add a shortcut for displaying recent notifications
 bindsym $mod+Shift+n exec --no-startup-id "dunstctl history-pop" 
