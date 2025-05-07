@@ -5,7 +5,7 @@
 
 **wiredWM** is rav3ndust's personal fork of [i3](https://i3wm.org/), which is a tiling window manager for [X11](https://www.x.org/). There is also work ongoing to bring the configs over to [Sway](https://swaywm.org/), for [Wayland](https://wayland.freedesktop.org/).
 
-![image](https://github.com/rav3ndust/wiredWM/assets/35274771/606fd9ee-4924-4d64-96f0-1de99bf3de87)
+![image](https://github.com/user-attachments/assets/980474a8-057d-4f72-90c0-f3691b0a188a)
 
 ###### let's all love lain
 
@@ -13,8 +13,7 @@
 
 ## minimal and lightweight 
 
-![image](https://github.com/rav3ndust/wiredWM/assets/35274771/a1229952-062f-4f6e-8eb9-02e08712c081)
-
+![image](https://github.com/user-attachments/assets/f65e69b7-cdf2-4c22-bc50-36808b982009)
 
 ###### minimal desktop and keyboard-driven for quick efficiency. clickable icons are located at the right side of the status bar for common tasks - for those unfortunate occasions where you have to reach for the mouse
 
@@ -32,7 +31,7 @@ Easy to use and easily extensible. Takes up very little of precious system resou
 
 ## more resources for your stuff
 
-![image](https://github.com/rav3ndust/wiredWM/assets/35274771/1100995d-363f-45e6-8b45-a4f084d983d7)
+![image](https://github.com/user-attachments/assets/9df5ea01-3159-4fbf-bccb-850ee0c659d7)
 
 ###### browse the web and run all of your favorite applications in a minimal environment 
 
@@ -44,7 +43,7 @@ For a general list of applications, you can also press *Meta+Shift+A* and scroll
 
 ## organize your windows with ease
 
-![image](https://github.com/rav3ndust/wiredWM/assets/35274771/40b3d828-78a1-4af7-be99-089c440a3b57)
+![image](https://github.com/user-attachments/assets/0a470c6a-ef4a-434d-9db1-9e8b0b84b932)
 
 ###### automate the organization of the windows on your screen
 
