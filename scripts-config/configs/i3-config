@@ -109,7 +109,10 @@ exec --no-startup-id flameshot
 exec --no-startup-id lxpolkit
 
 # start compositor. we use xcompmgr
-exec --no-startup-id xcompmgr
+#exec --no-startup-id xcompmgr
+# - - - testing picom
+exec --no-startup-id "picom -f -e 0.9 --corner-radius 5"
+##############################
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -124,7 +127,8 @@ floating_modifier $mod
 # start a terminal.
 # Our installed terminal emulators are "foot" (amazing on wayland), "st", "xterm", "gnome-terminal", "mate-terminal", "kitty" and "alacritty."
 # Choose which one works best for you!
-bindsym $mod+Return exec foot
+bindsym $mod+Return exec sakura
+#bindsym $mod+Return exec foot
 #bindsym $mod+Return exec st
 #bindsym $mod+Return exec xterm
 #bindsym $mod+Return exec kitty
@@ -152,7 +156,7 @@ bindsym $mod+Shift+a exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -fn "I
 #bindsym $mod+Shift+a exec --no-startup-id "i3-dmenu-desktop --dmenu='rofi -dmenu'"
 
 # launch rofi - autorun, ssh, app picker.
-bindsym $mod+Shift+d exec rofi -show combi -combi -modi window,drun,run -modi combi
+bindsym $mod+Shift+d exec --no-startup-id "rofi -show combi -combi -modi window,drun,run modi combi"
 #bindsym $mod+Shift+d exec --no-startup-id "rofi -combi -modi window,drun,run -theme purple -font 'Inter Bold 10' -show combi"
 ######################################################################
 # add a shortcut for displaying recent notifications
