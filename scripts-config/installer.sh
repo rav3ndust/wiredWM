@@ -32,8 +32,8 @@
 # - we use *nnn* for terminal file management. 
 # - we use *cmus* for playing audio in the terminal. 
 # - we use *mpv* for handling multimedia files.
-# - we use *xscreensaver* for handling screensaver functionality and auto-locking.
-# - we use *xss-lock* for an additional screen locking utility to run i3lock-fancy.
+# - we use *slock* for handling locking functionality and auto-locking.
+# - there is a choice of *picom* or *xcompmgr* for compositing.
 # - we use *meteo-qt* for displaying weather info in the i3bar.
 # - we use *gsimplecal* as a floating calendar that's accessible when pressing meta+c 
 # - we also add *calcurse* for tracking appointments and `TODO`s in the terminal.
