@@ -8,7 +8,7 @@
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
-
+# Note that in this config, "$mod" is the 'super' key, while "Mod1' is the 'alt' key 
 set $mod Mod4
 
 # - - - this is sway specific: - - -
@@ -27,7 +27,7 @@ set $PATH $PATH:/usr/games:/$HOME/.local/bin
 # (for no titlebars (except when windows are tabbed/stacked)):
 for_window [class="^.*"] border pixel 4 
 # (for always-on titlebars:
-#for_window [class="^.*"] border normal 4
+#for_window [class="^.*"] border normal 4 
 # > select which option for borders you want by commenting the appropriate options out
 
 # - - for gaps - - 
@@ -61,9 +61,11 @@ font pango:Inter Bold 10
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
+##############################################################################
 
 # store secrets for applications
-exec --no-startup-id sh -c 'eval $(/usr/bin/gnome-keyring-daemon --start --components=secrets,pkcs11,ssh) && export SSH_AUTH_SOCK'
+#exec --no-startup-id sh -c 'eval $(/usr/bin/gnome-keyring-daemon --start --components=secrets,pkcs11,ssh) && export SSH_AUTH_SOCK'
+exec --no-startup-id "gnome-keyring-daemon --components=secrets"
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -108,10 +110,11 @@ exec --no-startup-id flameshot
 # we use lxpolkit to handle priv escalation when needed.
 exec --no-startup-id lxpolkit
 
-# start compositor. we use xcompmgr
+# start compositor
 #exec --no-startup-id xcompmgr
 # - - - testing picom
-exec --no-startup-id "picom -f -e 0.9 --corner-radius 5"
+# - - - use the `-c` flag if we want shadowing
+exec --no-startup-id "picom -f -e 0.9 --corner-radius 3"
 ##############################
 
 # Use pactl to adjust volume in PulseAudio.
@@ -156,7 +159,7 @@ bindsym $mod+Shift+a exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -fn "I
 #bindsym $mod+Shift+a exec --no-startup-id "i3-dmenu-desktop --dmenu='rofi -dmenu'"
 
 # launch rofi - autorun, ssh, app picker.
-bindsym $mod+Shift+d exec --no-startup-id "rofi -show combi -combi -modi window,drun,run modi combi"
+bindsym Mod1+Tab exec --no-startup-id "rofi -show combi -combi -modi window,drun,run modi combi"
 #bindsym $mod+Shift+d exec --no-startup-id "rofi -combi -modi window,drun,run -theme purple -font 'Inter Bold 10' -show combi"
 ######################################################################
 # add a shortcut for displaying recent notifications
@@ -259,13 +262,15 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # quickly lock the display. we use `i3lock-fancy` for this.
-bindsym $mod+Shift+z exec "i3lock -c 000000"
+bindsym $mod+Shift+z exec "i3lock-fancy"
+# or, we can use regular i3lock (use hexcode for color - currently black '#000000')
+#bindsym $mod+Shift+z exec "i3lock -c 000000"
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart wiredWM inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit wiredWM (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit command detected. Are you sure you would like to logout of wiredWM? This X session will be closed.' -B 'Yes, log out of wiredWM' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit command detected. Are you sure you would like to logout of wiredWM? This session will be closed.' -B 'Yes, log out of wiredWM' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
