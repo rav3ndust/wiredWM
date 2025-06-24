@@ -41,7 +41,7 @@
 		"on-click": "st -e tty-clock"
 	},
 	"clock#3": {
-		"format": "{:%m-%d}",
+		"format": "{:%y-%m-%d}",
 		"tooltip": true,
 		"on-click": "gsimplecal"
 	},
@@ -62,7 +62,7 @@
 		"on-click-right": "pavucontrol"
 	},
 	// - - - XXX testing section XXX - - - 
-	// this is a 'testing' network module.
+	// this is a 'testing' network module. if it doesn't work out right, we'll remove it
 	"network": {
         	"format-wifi": "📶 {essid} ({signalStrength}%)",
         	"format-ethernet": "🌐 {ifname}",
