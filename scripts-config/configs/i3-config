@@ -137,8 +137,8 @@ floating_modifier $mod
 # start a terminal.
 # Our installed terminal emulators are "foot" (amazing on wayland), "st", "xterm", "gnome-terminal", "mate-terminal", "kitty" and "alacritty."
 # Choose which one works best for you!
-bindsym $mod+Return exec sakura
-#bindsym $mod+Return exec foot
+#bindsym $mod+Return exec sakura
+bindsym $mod+Return exec foot
 #bindsym $mod+Return exec st
 #bindsym $mod+Return exec xterm
 #bindsym $mod+Return exec kitty
@@ -179,7 +179,9 @@ bindsym $mod+c exec --no-startup-id "gsimplecal"
 bindsym Caps_Lock exec --no-startup-id "notify-send 'wired helper' 'Caps Lock pressed.'"
 
 # add a keybinding for quick screenshots (currently using `flameshot gui` for this functionality
-bindsym $mod+p exec --no-startup-id "flameshot gui"
+# also using grimshot. uncomment the one you'd like to use on wiredWM!
+#bindsym $mod+p exec --no-startup-id "flameshot gui"
+bindsym $mod+p exec --no-startup-id "grimshot copy area" 
 
 # change focus
 bindsym $mod+j focus left
