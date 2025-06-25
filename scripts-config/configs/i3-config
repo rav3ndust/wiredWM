@@ -68,17 +68,11 @@ font pango:Inter Bold 10
 exec --no-startup-id "gnome-keyring-daemon --components=secrets"
 
 # screenlock and suspend (wayland)
+# uses `nslock`, our wrapper around `swaylock`
 exec swayidle -w \
-    timeout 300 'swaylock -c 000000' \
-    timeout 600 'swaymsg "output * dpms off" && systemctl suspend' \
-    before-sleep 'swaylock -c 000000' \
-    lock 'swaylock -c 000000' \
-    resume 'swaymsg "output * dpms on"'
-
-# TESTING ABOVE
-#exec swayidle -w \
-#    timeout 10 'swaylock -c 000000' \
-#    lock 'swaylock -c 000000'
+    timeout 600 'nslock &' \
+    timeout 900 'systemctl suspend' \
+    before-sleep 'nslock' 
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -339,7 +333,7 @@ bar {
 }
 
 # custom conky displaying time, a message, and date in US format:
-exec --no-startup-id conky
+#exec --no-startup-id conky
 
 # we're using xautolock+i3lock to lock the screen after 10 mins of inactivity. The screen will blank and you'll be prompted for your password.
 # you can change the lock time by editing the number behind the -time flag. You can also edit the color of the lock screen using hexadecimal. Right now, it is set to purple (6a0dad)
