@@ -88,7 +88,7 @@ makeFolders () {
 install_wired_pkgs () {	
 	# this function updates and intalls the needed deps for wiredWM
 	sudo apt-get update
-	sudo apt-get install -y i3 i3lock-fancy nitrogen pamixer pulseaudio-utils xcompmgr picom waybar slock alacritty fonts-inter xterm arandr rofi xss-lock feh volumeicon-alsa polybar blueman dunst flameshot meteo-qt pasystray ffmpeg kitty stterm surf conky suckless-tools lxpolkit lxappearance vim nnn cmus xscreensaver amfora sway swaylock swaybg grimshot xdg-desktop-portal-wlr qt5ct tty-clock wf-recorder sakura foot gsimplecal calcurse pavucontrol yaru-theme-gtk yaru-theme-icon
+	sudo apt-get install -y i3 i3lock-fancy nitrogen pamixer pulseaudio-utils xcompmgr picom waybar slock alacritty fonts-inter xterm arandr rofi xss-lock feh volumeicon-alsa polybar blueman dunst flameshot meteo-qt pasystray ffmpeg kitty stterm surf conky suckless-tools lxpolkit lxappearance vim nnn cmus xscreensaver amfora sway swaylock swayidle swaybg grimshot xdg-desktop-portal-wlr qt5ct tty-clock wf-recorder sakura foot gsimplecal calcurse pavucontrol yaru-theme-gtk yaru-theme-icon
 } 
 apply_configs () {
 	# this function applies the configs for: 
@@ -98,7 +98,7 @@ apply_configs () {
 	#	- dunst
 	#	- vim
 	#	- waybar
- 	#	- rofi
+ #	- rofi
 	#	- other wayland-specific stuff
 	# apply the i3-config file to /etc/i3/config and ~/.config/i3/config
 	echo "Copying wiredWM configuration files..."
