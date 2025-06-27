@@ -34,9 +34,9 @@ window#waybar {
 #tray {
     background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
     border-radius: 10px; /* Rounded corners for pill effect */
-    padding: 3px 7px; /* Padding for a comfortable look */
+    padding: 4px 7px; /* Padding for a comfortable look */
     margin: 0 3px; /* Margin between modules */
-    color: #fdf6e3; /* Default text color */
+    color: #00ffff; /* Default text color */
     font-size: 10px; /* Ensure text size is consistent */
 }
 
@@ -46,7 +46,7 @@ window#waybar {
 
 #workspaces button {
     padding: 0px 8px; /* Padding for buttons */
-    color: #fdf6e3; /* Default text color */
+    color: #00ffff; /* Default text color */
     background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for buttons */
     border-radius: 12px; /* Rounded corners for pill effect */
     transition: background 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
@@ -76,12 +76,12 @@ window#waybar {
     border-radius: 10px; /* Ensure rounded corners */
     padding: 3px 7px; /* Match padding of other modules */
     margin: 0 3px; /* Match margin of other modules */
-    color: #ff10f0; /* Vibrant green to match clock and memory */
+    color: #ff10f0; 
     transition: color 0.3s; /* Smooth color transition for state changes */
 }
 
 #network.disconnected {
-    color: #ff10f0; /* Pink for disconnected state to stand out */
+    color: #ff3131; /* red for disconnected state to stand out */
 }
 
 
@@ -98,7 +98,7 @@ window#waybar {
 }
 
 #disk {
-    color: #39ff14; /* Match main color scheme */
+    color: #ff10f0; /* Match main color scheme */
 }
 
 #clock,
