@@ -99,7 +99,7 @@ apply_configs () {
 	#	- dunst
 	#	- vim
 	#	- waybar
- #	- rofi
+ 	#	- rofi
 	#	- other wayland-specific stuff
 	# apply the i3-config file to /etc/i3/config and ~/.config/i3/config
 	echo "Copying wiredWM configuration files..."
