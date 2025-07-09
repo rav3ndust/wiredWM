@@ -40,6 +40,7 @@
 # - *tty-clock* is here as a simple, terminal-based clock (used as a clickable element in waybar)
 # - we include *fonts-inter* for our fonts
 # - we include *pavucontrol* as another way to graphically adjust the volume
+# - we use *gnome-characters* for emoji selection and handling
 # - - - - - - - - - - - - - - - 
 # wayland-specific stuff
 # - we are using, of course, sway to base all of our wired configs on
@@ -88,7 +89,7 @@ makeFolders () {
 install_wired_pkgs () {	
 	# this function updates and intalls the needed deps for wiredWM
 	sudo apt-get update
-	sudo apt-get install -y i3 i3lock-fancy nitrogen pamixer pulseaudio-utils xcompmgr picom waybar slock alacritty fonts-inter xterm arandr rofi xss-lock feh volumeicon-alsa polybar blueman dunst flameshot meteo-qt pasystray ffmpeg kitty stterm surf conky suckless-tools lxpolkit lxappearance vim nnn cmus xscreensaver amfora sway swaylock swayidle swaybg grimshot xdg-desktop-portal-wlr qt5ct tty-clock wf-recorder sakura foot gsimplecal calcurse pavucontrol yaru-theme-gtk yaru-theme-icon pipx
+	sudo apt-get install -y i3 i3lock-fancy nitrogen pamixer pulseaudio-utils xcompmgr picom waybar slock alacritty fonts-inter xterm arandr rofi xss-lock feh volumeicon-alsa polybar blueman dunst flameshot meteo-qt pasystray ffmpeg kitty stterm surf conky suckless-tools lxpolkit lxappearance vim nnn cmus xscreensaver amfora sway swaylock swayidle swaybg grimshot xdg-desktop-portal-wlr qt5ct tty-clock wf-recorder sakura foot gsimplecal calcurse pavucontrol yaru-theme-gtk yaru-theme-icon pipx gnome-characters
 } 
 apply_configs () {
 	# this function applies the configs for: 
