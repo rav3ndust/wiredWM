@@ -67,6 +67,7 @@ font pango:Inter Bold 10
 #exec --no-startup-id sh -c 'eval $(/usr/bin/gnome-keyring-daemon --start --components=secrets,pkcs11,ssh) && export SSH_AUTH_SOCK'
 exec --no-startup-id "gnome-keyring-daemon --components=secrets"
 
+# - - - use this for lock/hibernate on wayland
 # screenlock and suspend (wayland)
 # uses `nslock`, our wrapper around `swaylock`
 exec swayidle -w \
@@ -121,7 +122,7 @@ exec --no-startup-id lxpolkit
 #exec --no-startup-id xcompmgr
 # - - - testing picom
 # - - - use the `-c` flag if we want shadowing
-exec --no-startup-id "picom -f -e 0.9 --corner-radius 3"
+exec --no-startup-id "picom -f -c -e 0.9 --corner-radius 3"
 ##############################
 
 # Use pactl to adjust volume in PulseAudio.
@@ -182,6 +183,9 @@ bindsym Caps_Lock exec --no-startup-id "notify-send 'wired helper' 'Caps Lock pr
 # also using grimshot. uncomment the one you'd like to use on wiredWM!
 #bindsym $mod+p exec --no-startup-id "flameshot gui"
 bindsym $mod+p exec --no-startup-id "grimshot copy area" 
+
+# add a keybind for selecting emoji
+bindsym Mod1+e exec --no-startup-id "gnome-characters"
 
 # change focus
 bindsym $mod+j focus left
@@ -271,14 +275,17 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # quickly lock the display. we use `i3lock-fancy` for this.
-bindsym $mod+Shift+z exec "i3lock-fancy"
+#bindsym $mod+Shift+z exec "i3lock-fancy"
 # or, we can use regular i3lock (use hexcode for color - currently black '#000000')
 #bindsym $mod+Shift+z exec "i3lock -c 000000"
+# or - on wayland, 'nslock':
+bindsym $mod+Shift+z exec "nslock"
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart wiredWM inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit wiredWM (logs you out of your X session)
+# exit wiredWM (logs you out of your session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit command detected. Are you sure you would like to logout of wiredWM? This session will be closed.' -B 'Yes, log out of wiredWM' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
@@ -314,11 +321,12 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	# uncomment the below if we want i3bar on top.
+	# uncomment the below if we want statusbar on top.
 	position top
-    	status_command i3status
+        #status_command waybar
+    	status_command i3status	
 	# font choices we like - Ubuntu, Inter, Noto Sans, and Cantarell.
-	# both are nice and readable in wired.
+	# all are nice and readable in wired.
 	# use the font of your choice by commenting/uncommenting them.
 	#font pango:Ubuntu 10
 	#font pango:Cantarell 10
