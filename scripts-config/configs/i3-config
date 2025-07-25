@@ -14,10 +14,13 @@ set $mod Mod4
 # - - - this is sway specific: - - -
 # XXX it is also being tested, so comment it out when not using it.
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway XDG_SESSION_DESKTOP=sway
+# set secret store. we use gnome-keyring. a gui to see its content can be called via `seahorse`
+exec --no-startup-id "gnome-keyring-daemon --components=secrets"
 #exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+# set wallpaper
 exec swaybg -i $HOME/wiredWM/wp/lain4.png &
+# ensure some paths are properly linked
 set $PATH $PATH:/usr/games:/$HOME/.local/bin
-#exec killall swaybar; waybar &
 
 # make windows float by default.
 # comment/uncomment the below line to disable/enable tiling by default.
@@ -39,7 +42,7 @@ smart_borders on
 # You can manually adjust their values below, if you choose to set them.
 gaps inner 3
 #gaps inner 7
-#gaps outer 5
+gaps outer 3
 
 #for_window [class=".*"] border pixel 2 gaps inner 50 gaps outer 20
 
@@ -65,7 +68,7 @@ font pango:Inter Bold 10
 
 # store secrets for applications
 #exec --no-startup-id sh -c 'eval $(/usr/bin/gnome-keyring-daemon --start --components=secrets,pkcs11,ssh) && export SSH_AUTH_SOCK'
-exec --no-startup-id "gnome-keyring-daemon --components=secrets"
+#exec --no-startup-id "gnome-keyring-daemon --components=secrets"
 
 # - - - use this for lock/hibernate on wayland
 # screenlock and suspend (wayland)
@@ -136,12 +139,12 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal.
-# Our installed terminal emulators are "foot" (amazing on wayland), "st", "xterm", "gnome-terminal", "mate-terminal", "kitty" and "alacritty."
+# Our installed terminal emulators are "sakura", "foot", "ghostty", "st", "gnome-terminal", "mate-terminal", "kitty" and "alacritty."
 # Choose which one works best for you!
 #bindsym $mod+Return exec sakura
 bindsym $mod+Return exec foot
+#bindsym $mod+Return exec ghostty
 #bindsym $mod+Return exec st
-#bindsym $mod+Return exec xterm
 #bindsym $mod+Return exec kitty
 #bindsym $mod+Return exec alacritty
 #bindsym $mod+Return exec gnome-terminal
@@ -323,7 +326,10 @@ bindsym $mod+r mode "resize"
 bar {
 	# uncomment the below if we want statusbar on top.
 	position top
-        #status_command waybar
+        # two choices of bars here:
+	# we have custom waybar and swaybar configurations.
+	# just uncomment the one you want to use! :)
+	#swaybar_command waybar
     	status_command i3status	
 	# font choices we like - Ubuntu, Inter, Noto Sans, and Cantarell.
 	# all are nice and readable in wired.
@@ -335,10 +341,11 @@ bar {
 	#font pango:Quicksand Bold 10
 	font pango:Inter Bold 10
 	colors {
-		focused_workspace #ff10f0 #000000 #39FF14
-		inactive_workspace #000000 #000000 #ff3131
+		focused_workspace #ff10f0 #000000e5 #39FF14
+		inactive_workspace #000000 #000000e5 #ff3131
 		separator #ff10f0
 		statusline #ff10f0
+		background #000000e5
 	}
 }
 
@@ -350,9 +357,6 @@ bar {
 #exec xautolock -detectsleep -time 10 -locker "i3lock -c 000000"
 # We're using xscreensaver to handle screensaving and autolock.
 #exec --no-startup-id xscreensaver
-
-# we want to start the gnome-keyring-daemon so we can store secrets for browsers and other applications.
-#exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 
 # ensure proper kb layout
 exec "setxkbmap -layout us,de"
