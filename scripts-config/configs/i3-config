@@ -67,7 +67,8 @@ font pango:Inter Bold 10
 ##############################################################################
 
 # enable mouse warping when changing windows with the keyboard.
-mouse_warping container
+# comment the line below to disable it
+#mouse_warping container
 
 # store secrets for applications
 #exec --no-startup-id sh -c 'eval $(/usr/bin/gnome-keyring-daemon --start --components=secrets,pkcs11,ssh) && export SSH_AUTH_SOCK'
