@@ -66,6 +66,9 @@ font pango:Inter Bold 10
 #font pango:DejaVu Sans Mono 8
 ##############################################################################
 
+# enable mouse warping when changing windows with the keyboard.
+mouse_warping container
+
 # store secrets for applications
 #exec --no-startup-id sh -c 'eval $(/usr/bin/gnome-keyring-daemon --start --components=secrets,pkcs11,ssh) && export SSH_AUTH_SOCK'
 #exec --no-startup-id "gnome-keyring-daemon --components=secrets"
