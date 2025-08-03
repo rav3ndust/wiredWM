@@ -78,8 +78,8 @@ font pango:Inter Bold 10
 # screenlock and suspend (wayland)
 # uses `nslock`, our wrapper around `swaylock`
 exec swayidle -w \
-    timeout 600 'nslock &' \
-    timeout 900 'systemctl suspend' \
+    timeout 900 'nslock &' \
+    timeout 1200 'systemctl suspend' \
     before-sleep 'nslock' 
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
