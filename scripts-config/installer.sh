@@ -41,6 +41,7 @@
 # - we include *fonts-inter* for our fonts
 # - we include *pavucontrol* as another way to graphically adjust the volume
 # - we use *gnome-characters* for emoji selection and handling
+# - we include *tmux* for terminal multiplexing
 # - - - - - - - - - - - - - - - 
 # wayland-specific stuff
 # - we are using, of course, sway to base all of our wired configs on
@@ -71,6 +72,8 @@ WAYBAR_CSS_CONFIG="$HOME/wiredWM/scripts-config/configs/wayland-config/style.css
 WAYBAR_CSS_CONFIG_LOCATION="/etc/xdg/waybar/style.css"
 ROFI_CONFIG="$HOME/wiredWM/scripts-config/configs/rofi-config/config.rasi"
 ROFI_CONFIG_LOCATION="$HOME/.config/rofi/config.rasi"
+TMUX_CONFIG="$HOME/wiredWM/scripts-config/configs/tmux.conf"
+TMUX_CONFIG_LOCATION="$HOME/.tmux.conf"
 ########################################################
 # - - - Functions - - - 
 ########################################################
@@ -78,18 +81,18 @@ makeFolders () {
 	# this function handles wm config
 	echo "Creating folders for config files..."
 	sleep 1
-	sudo mkdir /etc/i3 && sudo touch /etc/i3/config
-	sudo mkdir $HOME/.config/i3 && sudo touch $HOME/.config/i3/config
+	sudo mkdir -p /etc/i3 && sudo touch /etc/i3/config
+	sudo mkdir -p $HOME/.config/i3 && sudo touch $HOME/.config/i3/config
 	sudo touch /etc/i3status.conf
-	sudo mkdir /etc/dunst && sudo touch /etc/dunst/dunstrc
-	sudo mkdir $HOME/.config/dunst && sudo touch $HOME/.config/dunst/dunstrc
-	sudo mkdir /etc/conky && sudo touch /etc/conky/conky.conf
- 	sudo mkdir $HOME/.config/rofi && sudo touch $HOME/.config/rofi/config.rasi 
+	sudo mkdir -p /etc/dunst && sudo touch /etc/dunst/dunstrc
+	sudo mkdir -p $HOME/.config/dunst && sudo touch $HOME/.config/dunst/dunstrc
+	sudo mkdir -p /etc/conky && sudo touch /etc/conky/conky.conf
+ 	sudo mkdir -p $HOME/.config/rofi && sudo touch $HOME/.config/rofi/config.rasi 
 }
 install_wired_pkgs () {	
 	# this function updates and intalls the needed deps for wiredWM
 	sudo apt-get update
-	sudo apt-get install -y i3 i3lock-fancy nitrogen pamixer pulseaudio-utils xcompmgr picom waybar slock alacritty fonts-inter xterm arandr rofi xss-lock feh volumeicon-alsa polybar blueman dunst flameshot meteo-qt pasystray ffmpeg kitty stterm surf conky suckless-tools lxpolkit lxappearance vim nnn cmus xscreensaver amfora sway swaylock swayidle swaybg grimshot xdg-desktop-portal-wlr qt5ct tty-clock wf-recorder sakura foot gsimplecal calcurse pavucontrol yaru-theme-gtk yaru-theme-icon pipx gnome-characters
+	sudo apt-get install -y i3 i3lock-fancy nitrogen pamixer pulseaudio-utils xcompmgr picom waybar slock alacritty fonts-inter xterm arandr rofi xss-lock feh volumeicon-alsa polybar blueman dunst flameshot meteo-qt pasystray ffmpeg kitty stterm surf conky suckless-tools lxpolkit lxappearance vim nnn cmus xscreensaver amfora sway swaylock swayidle swaybg grimshot xdg-desktop-portal-wlr qt5ct tty-clock wf-recorder sakura foot gsimplecal calcurse pavucontrol yaru-theme-gtk yaru-theme-icon pipx gnome-characters tmux
 } 
 apply_configs () {
 	# this function applies the configs for: 
@@ -100,6 +103,7 @@ apply_configs () {
 	#	- vim
 	#	- waybar
  	#	- rofi
+  	#	- tmux
 	#	- other wayland-specific stuff
 	# apply the i3-config file to /etc/i3/config and ~/.config/i3/config
 	echo "Copying wiredWM configuration files..."
@@ -123,8 +127,8 @@ apply_configs () {
 	echo "You can edit conky at /etc/conky/conky.conf anytime." && sleep 1
 	# apply the dunstrc to /etc/dunst/dunstrc and ~/.config/dunst/dunstrc
 	echo "Copying dunstrc..."
-	sudo mkdir /etc/dunst && sudo touch /etc/dunst/dunstrc
-	sudo mkdir ~/.config/dunst && sudo touch ~/.config/dunst/dunstrc
+	sudo mkdir -p /etc/dunst && sudo touch /etc/dunst/dunstrc
+	sudo mkdir -p ~/.config/dunst && sudo touch ~/.config/dunst/dunstrc
 	sudo cp -f $WIRED_DUNSTRC $DUNSTRC_CONFIG_LOCATION_1
 	sudo cp -f $WIRED_DUNSTRC $DUNSTRC_CONFIG_LOCATION_2
 	echo "dunstrc copied." && sleep 1
@@ -142,6 +146,11 @@ apply_configs () {
   	echo "Copying rofi config..." && sleep 1
    	sudo cp -f $ROFI_CONFIG $ROFI_CONFIG_LOCATION
     	echo "rofi config copied." && sleep 1
+     	# apply the config for tmux
+        # our tmux config applies a wiredWM-like scheme and keyboard shortcuts for the tmux environment
+	echo "Copying tmux config..." && sleep 1
+ 	sudo cp -f $TMUX_CONFIG $TMUX_CONFIG_LOCATION
+  	echo "tmux config has been copied." && sleep 1
 	# function for creating our custom lockscreen (wayland)
  	apply_nslock() {
   		# applies the nslock script to /usr/bin. is only used on wayland.
@@ -185,8 +194,7 @@ main () {
 	# x x x x x x x x x x x x x x x x x x 
 	# - - - finish up
 	echo "wiredWM has been installed." && sleep 1
-	echo "In order to log into it, please log out of your current X Session and log into 'i3', which you can now find in your desktop environment list in your login manager." && sleep 1
-	notify-send "wiredWM installer" "wiredWM has been installed." 
+	echo "Preparing to exit..." 
 	sleep 3 && exit 
 }
 ########################################################
