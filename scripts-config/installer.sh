@@ -77,7 +77,7 @@ TMUX_CONFIG_LOCATION="$HOME/.tmux.conf"
 ########################################################
 # - - - Functions - - - 
 ########################################################
-makeFolders () {
+make_folders () {
 	# this function handles wm config
 	echo "Creating folders for config files..."
 	sleep 1
@@ -187,7 +187,7 @@ main () {
 	echo "Updating repositories and preparing for installation..."
 	sleep 1
 	install_wired_pkgs		
-	makeFolders				
+	make_folders				
 	apply_configs	
  	override_fp
 	wp_set					
