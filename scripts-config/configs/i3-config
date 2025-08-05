@@ -183,6 +183,9 @@ bindsym $mod+Shift+n exec --no-startup-id "dunstctl history-pop"
 # add a shortcut for popping the calendar
 bindsym $mod+c exec --no-startup-id "gsimplecal"
 
+# add a shortcut for popping our file manager (nemo)
+bindsym $mod+Shift+f exec --no-startup-id "nemo"
+
 # add a popup notification showing when Caps_Lock has been pressed
 bindsym Caps_Lock exec --no-startup-id "notify-send 'wired helper' 'Caps Lock pressed.'"
 
