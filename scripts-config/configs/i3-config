@@ -174,7 +174,7 @@ bindsym $mod+Shift+a exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -fn "I
 #bindsym $mod+Shift+a exec --no-startup-id "i3-dmenu-desktop --dmenu='rofi -dmenu'"
 
 # launch rofi - autorun, ssh, app picker.
-bindsym Mod1+Tab exec --no-startup-id "rofi -show combi -combi -modi window,drun,run modi combi"
+bindsym $mod+Tab exec --no-startup-id "rofi -show combi -combi -modi window,drun,run modi combi"
 #bindsym $mod+Shift+d exec --no-startup-id "rofi -combi -modi window,drun,run -theme purple -font 'Inter Bold 10' -show combi"
 ######################################################################
 # add a shortcut for displaying recent notifications
