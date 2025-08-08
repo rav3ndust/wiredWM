@@ -1,107 +1,74 @@
-// -*- mode: json -*-
-// waybar config for wiredWM
-//	- by rav3ndust
-// this file should also live at /etc/xdg/waybar/config
-{
-	"layer": "top",
-	"position": "top",
+-- vim: ts=4 sw=4 noet ai cindent syntax=lua
+--[[
+Conky, a system monitor, based on torsmo
 
-	"modules-left": [
-		"sway/workspaces",
-		"sway/window"
-	],
-	"modules-center": [
-		"clock#1",
-		"clock#2",
-		"clock#3"
-	],
-	"modules-right": [
-		"pulseaudio",
-		//"memory",
-		//"cpu",
-		"network",
-		"battery",
-		//"disk",
-		"tray"
-	],
+Any original torsmo code is licensed under the BSD license
 
-	"sway/workspaces": {
-		"disable-scroll": false,
-		"format": "{name}"
-	},
+All code written since the fork of torsmo is licensed under the GPL
 
-	"clock#1": {
-		"format": "{:%a}",
-		"tooltip": false,
-		"on-click": "st -e calcurse"
-	},
-	"clock#2": {
-		"format": "{:%H:%M}",
-		"tooltip": false,
-		"on-click": "st -e tty-clock"
-	},
-	"clock#3": {
-		"format": "{:%Y/%m/%d}",
-		"tooltip": true,
-		"on-click": "gsimplecal"
-	},
+Please see COPYING for details
 
-	"pulseaudio": {
-		"format": "🔊 {volume:2}%",  // Added volume character
-		"format-bluetooth": "🔊 Volume {volume}% ",
-		"format-muted": "🔇 mute",  // Added mute character
-		"format-icons": {
-			"headphones": "🎧",
-			"default": [
-				"🔊",
-				"🔈"
-			]
-		},
-		"scroll-step": 5,
-		"on-click": "pamixer -t",
-		"on-click-right": "pavucontrol"
-	},
-	// - - - XXX testing section XXX - - - 
-	// this is a 'testing' network module. if it doesn't work out right, we'll remove it
-	"network": {
-        	"format-wifi": "📶 {essid} ({signalStrength}%)",
-        	"format-ethernet": "🌐 {ifname}",
-        	"format-disconnected": "⚠ Disconnected",
-        	"tooltip-format": "Wireless status -  {ifname}: {ipaddr}/{cidr}",
-        	"on-click": "st -e nmtui",
-        	"interval": 5
-    	},
-	// - - - XXX end testing section XXX - - - 
-	"memory": {
-		"interval": 5,
-		"format": "Mem {}%"
-	},
-	"cpu": {
-		"interval": 5,
-		"format": "CPU {usage:2}%"
-	},
-	"battery": {
-		"states": {
-			"good": 95,
-			"warning": 30,
-			"critical": 15
-		},
-		"format": "{icon} {capacity}%",
-		"format-icons": [
-			"",
-			"",
-			"",
-			"",
-			""
-		]
-	},
-	"disk": {
-		"interval": 5,
-		"format": "Disk {percentage_used:2}%",
-		"path": "/"
-	},
-	"tray": {
-		"icon-size": 20 
-	}
+Copyright (c) 2004, Hannu Saransaari and Lauri Hakkarainen
+Copyright (c) 2005-2012 Brenden Matthews, Philip Kovacs, et. al. (see AUTHORS)
+All rights reserved.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+]]
+
+conky.config = {
+    alignment = 'bottom_right',
+    background = false,
+    border_width = 3,
+    cpu_avg_samples = 2,
+	default_color = '#39ff14',
+    default_outline_color = '#ff10f0',
+    default_shade_color = 'black',
+    draw_borders = true,
+    draw_graph_borders = true,
+    draw_outline = false,
+    draw_shades = true,
+    use_xft = true,
+    font = 'Inter Display Bold:size=16',
+    gap_x = 5,
+    gap_y = 60,
+    minimum_height = 5,
+	minimum_width = 5,
+    net_avg_samples = 2,
+    no_buffers = true,
+    out_to_console = false,
+    out_to_stderr = false,
+    out_to_wayland = true,
+    extra_newline = false,
+    own_window = true,
+    own_window_class = 'Conky',
+    own_window_type = 'override',
+    own_window_transparent = true, 
+    stippled_borders = 0,
+    update_interval = 0.5,
+    uppercase = false,
+    use_spacer = 'none',
+    double_buffer = true,
+    show_graph_scale = false,
+    show_graph_range = false
 }
 
+conky.text = [[
+${color #39FF14}       _wired ${color #AA336A}* * * 
+${color white}$hr
+${color red}~ ${color #ff3131}_time: ${color #FF10F0}${exec date +"%H:%M:%S"}
+${color black}
+${color white}${scroll 17 let's all love lain}
+${color black}
+${color red}~ ${color #ff3131}_date: ${color #FF10F0}${exec date +"%Y/%m/%d"}
+${color white}$hr
+]]
