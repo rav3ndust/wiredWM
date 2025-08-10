@@ -106,7 +106,7 @@
 	},
 	"custom/wired-launcher": {
 		"format": "🐻",
-		"on-click": "bash ~/wiredWM/scripts-config/rofi-launcher.sh",
+		"on-click": "rofi -show combi -combi -modi window,drun,run modi combi",
 		"tooltip": false	
 	}
 }
