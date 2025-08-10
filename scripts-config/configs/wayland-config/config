@@ -7,6 +7,7 @@
 	"position": "top",
 
 	"modules-left": [
+		"custom/wired-launcher",
 		"sway/workspaces",
 		"sway/window"
 	],
@@ -102,5 +103,10 @@
 	},
 	"tray": {
 		"icon-size": 20 
+	},
+	"custom/wired-launcher": {
+		"format": "🐻",
+		"on-click": "bash ~/wiredWM/scripts-config/rofi-launcher.sh",
+		"tooltip": false	
 	}
 }
