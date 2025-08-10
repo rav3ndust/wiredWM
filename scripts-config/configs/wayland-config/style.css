@@ -41,21 +41,13 @@ window#waybar {
 }
 
 /* TESTING */ 
-/* we are testing out a new module, a clickable launcher for our custom rofi - it features a bear icon like the suit lain wears */ 
 #custom-wired-launcher {
-    background: rgba(0, 0, 0, 0.7); /* Match semi-transparent black background */
-    border-radius: 10px; /* Match rounded corners for pill effect */
-    padding: 4px 7px; /* Match padding of other modules */
-    margin: 0 3px; /* Match margin of other modules */
-    color: #00ffff; /* Match default text color of other modules */
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    border-radius: 10px; /* Pill effect */
+    padding: 4px 7px; /* Comfortable padding */
+    margin: 0 3px; /* Spacing between modules */
+    color: #00ffff; /* Cyan to match other modules */
     font-size: 12px; /* Slightly larger for emoji visibility */
-    transition: background 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
-}
-
-#custom-wired-launcher:hover {
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Match workspace button hover effect */
-    background: rgba(255, 255, 255, 0.1); /* Subtle background change on hover */
-    color: #ff10f0; /* Change to secondary color on hover for visual feedback */
 }
 /* END TESTING */
 
