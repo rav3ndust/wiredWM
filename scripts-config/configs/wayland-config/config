@@ -105,7 +105,7 @@
 		"icon-size": 20 
 	},
 	"custom/wired-launcher": {
-		"format": "🐻",
+		"format": "▽",
 		"on-click": "rofi -show combi -combi -modi window,drun,run modi combi",
 		"tooltip": false	
 	}
