@@ -156,11 +156,17 @@ apply_configs () {
   		# applies the nslock script to /usr/bin. is only used on wayland.
 		local nslock_script="$HOME/wiredWM/scripts-config/locker-scripts/nslock.sh"
   		local nslock_exec_location="/usr/bin/nslock"
-    		echo "Applying nslock to $nslock_exec_location..."; sleep 1 
+    	echo "Applying nslock to $nslock_exec_location..."; sleep 1 
   		chmod +x $nslock_script; sudo cp $nslock_script $nslock_exec_location
-    		echo "Done."; sleep 1
+    	echo "Done."; sleep 1
   	}
+   copy_learn_script () {
+   		# applies the learning script for showing keybindings as a helpful resource (accessible by pressing $mod+Shift+H)
+	    local learn_script="learn.sh"
+	    chmod +x $learn_script; sudo cp $learn_script /usr/bin/learn
+	 }
    	apply_nslock
+	copy_learn_script
 }
 wp_set () {
 	# this function uses nitrogen to set the default wallpaper.
