@@ -31,7 +31,10 @@ window#waybar {
 #cpu,
 #battery,
 #disk,
-#tray {
+#tray,
+#idle_inhibitor,
+#backlight,
+#power-profiles-daemon {
     background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
     border-radius: 10px; /* Rounded corners for pill effect */
     padding: 4px 7px; /* Padding for a comfortable look */
@@ -116,4 +119,25 @@ window#waybar {
 #clock * { /* Target the clock and all its child elements */
     color: #39ff14; /* Set clock color to #39ff14 */
     font-weight: bold; /* Make clock text bold */
+}
+
+#idle_inhibitor {
+    color: #ff10f0; /* Pink neon to match elements like pulseaudio and battery */
+}
+
+#backlight {
+    color: #39ff14; /* Green neon to match elements like memory and clock */
+}
+
+#power-profiles-daemon {
+    color: #ff10f0; /* Pink neon to match power-related elements like battery */
+}
+
+#custom-power {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    border-radius: 10px; /* Pill effect */
+    padding: 4px 7px; /* Comfortable padding */
+    margin: 0 3px; /* Spacing between modules */
+    color: #ff10f0; /* Pink neon to match power-related elements */
+    font-size: 12px; /* Slightly larger for emoji visibility */
 }
