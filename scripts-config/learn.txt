@@ -1,0 +1,26 @@
+Keybinding Help 
+
+Please note that the "Super" key is the "Windows" key on most keyboards, and the "Command" key on Apple keyboards.
+ 
+Super+Enter: Open a terminal.
+Super+D: Open dmenu to run commands.
+Super+Shift+A: Open Nightshade Applications List to launch an app. Reads from .desktop files.
+Super+Tab: Open our modified rofi launcher to filter open windows, launch applications, and run commands.
+Super+Shift+Q: Close the focused window.
+Super+Shift+Space: Float/unfloat the focused window.
+Super+Number Keys: Switch between 10 workspaces (1-10).
+Super+Shift+Number Keys: Move the focused window to a chosen workspace.
+Super+R: Resize the active window with arrow keys.
+Super+F: Fullscreen the active window (toggle).
+Super+W: Switch to tabbed windowing.
+Super+S: Switch to stacked windowing.
+Super+E: Switch to tiled windowing.
+Super+Shift+R: Restart the window manager in-place.
+Super+Shift+Z: Lock your screen (uses wired-lock/swaylock).
+Super+P: Take a screenshot with grimshot (copies to clipboard).
+Super+Shift+N: Pop out recent notifications.
+Super+Shift+F: Pop out file manager (nemo).
+Super+C: Pop out a calendar window (gsimplecal).
+Super+Shift+E: Log out of wiredWM.
+Super+(left)click-drag: Re-organize tiled window or drag floating window.
+Super+(right)click-drag: Manually resize the window.
