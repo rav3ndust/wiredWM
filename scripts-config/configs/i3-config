@@ -54,7 +54,7 @@ client.unfocused 	#000000   #000000    #ff3131
 #font pango:Ubuntu 10
 #font pango:Cantarell 10
 #font pango:Inter Bold 10
-font pango:Fira Code 10 
+font pango:Noto Sans 10 
 #font pango:Quicksand 10
 #font pango:Poppins 10
 #font pango:Quicksand Medium Regular 10
@@ -157,13 +157,13 @@ bindsym $mod+Shift+q kill
 
 # start applications and run commands (your choice of dmenu or rofi)
 # start dmenu (a program launcher) - nightshade customized dmenu
-bindsym $mod+d exec dmenu_run -fn "FiraCode-10" -nb black -nf pink -sb green -sf red -p "nightshade - run command: "
+bindsym $mod+d exec dmenu_run -fn "NotoSans-10" -nb black -nf pink -sb green -sf red -p "nightshade - run command: "
 # rofi version of the above
 #bindsym $mod+d exec --no-startup-id "rofi -show run -theme purple -font 'Quicksand Bold 10'"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+Shift+a exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -fn "FiraCode-10" -i -nb black -nf pink -sb green -sf red -p "nightshade - Applications List: "'
+bindsym $mod+Shift+a exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -fn "NotoSans-10" -i -nb black -nf pink -sb green -sf red -p "nightshade - Applications List: "'
 # rofi version of the above.
 #bindsym $mod+Shift+a exec --no-startup-id "rofi -show drun -theme purple -font 'Inter Bold 10'"
 
@@ -351,7 +351,8 @@ bar {
 	#font pango:ubuntu-title 11
 	#font pango:Quicksand Bold 10
 	#font pango:Inter Bold 10
-	font pango:Fira Code 10
+	#font pango:Fira Code 10
+	font pango:Noto Sans 10
 	colors {
 		focused_workspace #ff10f0 #000000e5 #39FF14
 		inactive_workspace #000000 #000000e5 #ff3131
