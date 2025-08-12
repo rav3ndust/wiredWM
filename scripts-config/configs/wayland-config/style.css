@@ -2,8 +2,8 @@
  *	- by rav3ndust
  * a copy of this file should live at /etc/xdg/waybar/style.css */
 * {
-    font-size: 10px; /* Font size for better readability */
-    font-family: Jetbrains Mono;
+    font-size: 10px; /* Font size for better readability */ 
+    font-family: Fira Code;
     font-weight: bold; /* Make all text bold */
 }
 
