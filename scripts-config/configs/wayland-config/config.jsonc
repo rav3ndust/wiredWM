@@ -109,7 +109,8 @@
     "custom/wired-launcher": {
         "format": "▽",
         "on-click": "rofi -show combi -combi -modi window,drun,run modi combi",
-        "tooltip": false	
+        "tooltip": true,
+	"tooltip-format": "open Wired launcher"	
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -120,6 +121,8 @@
     },
     "backlight": {
         "format": "{percent}% {icon}",
+	"tooltip": true,
+	"tooltip-format": "Brightness control",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
     "power-profiles-daemon": {
