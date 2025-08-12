@@ -74,6 +74,8 @@ ROFI_CONFIG="$HOME/wiredWM/scripts-config/configs/rofi-config/config.rasi"
 ROFI_CONFIG_LOCATION="$HOME/.config/rofi/config.rasi"
 TMUX_CONFIG="$HOME/wiredWM/scripts-config/configs/tmux.conf"
 TMUX_CONFIG_LOCATION="$HOME/.tmux.conf"
+FOOT_CONFIG="$HOME/wiredWM/scripts-config/configs/foot.ini"
+FOOT_CONFIG_LOCATION="$HOME/.config/foot/foot.ini"
 ########################################################
 # - - - Functions - - - 
 ########################################################
@@ -92,7 +94,7 @@ make_folders () {
 install_wired_pkgs () {	
 	# this function updates and intalls the needed deps for wiredWM
 	sudo apt-get update
-	sudo apt-get install -y i3 i3lock-fancy nitrogen pamixer pulseaudio-utils xcompmgr picom waybar slock alacritty fonts-inter xterm arandr rofi xss-lock feh volumeicon-alsa polybar blueman dunst flameshot meteo-qt pasystray ffmpeg kitty stterm surf conky-all suckless-tools lxpolkit lxappearance vim nnn cmus xscreensaver amfora sway swaylock swayidle swaybg grimshot xdg-desktop-portal-wlr qt5ct tty-clock wf-recorder sakura foot gsimplecal calcurse pavucontrol yaru-theme-gtk yaru-theme-icon pipx gnome-characters tmux shotman nwg-look
+	sudo apt-get install -y i3 i3lock-fancy nitrogen pamixer pulseaudio-utils xcompmgr picom waybar slock alacritty fonts-inter xterm arandr rofi xss-lock feh volumeicon-alsa polybar blueman dunst flameshot meteo-qt pasystray ffmpeg kitty stterm surf conky-all suckless-tools lxpolkit lxappearance vim nnn cmus xscreensaver amfora sway swaylock swayidle swaybg grimshot xdg-desktop-portal-wlr qt5ct tty-clock wf-recorder sakura foot gsimplecal calcurse pavucontrol yaru-theme-gtk yaru-theme-icon pipx gnome-characters tmux shotman nwg-look fonts-jetbrains-mono
 } 
 apply_configs () {
 	# this function applies the configs for: 
@@ -142,12 +144,16 @@ apply_configs () {
 	sudo cp -f $WAYBAR_CONFIG $WAYBAR_CONFIG_LOCATION		# config file copy
 	sudo cp -f $WAYBAR_CSS_CONFIG $WAYBAR_CSS_CONFIG_LOCATION	# stylesheet copy
 	echo "waybar configs copied." && sleep 1
- 	# appy for config for rofi ($HOME/.config/rofi/config.rasi
+ 	# apply for config for rofi ($HOME/.config/rofi/config.rasi)
   	echo "Copying rofi config..." && sleep 1
    	sudo cp -f $ROFI_CONFIG $ROFI_CONFIG_LOCATION
-    	echo "rofi config copied." && sleep 1
-     	# apply the config for tmux
-        # our tmux config applies a wiredWM-like scheme and keyboard shortcuts for the tmux environment
+    echo "rofi config copied." && sleep 1
+    # apply the config for our foot terminal ($HOME/.config/foot/foot.ini)
+	echo "Copying foot config..." && sleep 1
+ 	sudo cp -f $FOOT_CONFIG $FOOT_CONFIG_LOCATION
+  	echo "foot config copied." && sleep 1
+	# apply the config for tmux
+    # our tmux config applies a wiredWM-like scheme and keyboard shortcuts for the tmux environment
 	echo "Copying tmux config..." && sleep 1
  	sudo cp -f $TMUX_CONFIG $TMUX_CONFIG_LOCATION
   	echo "tmux config has been copied." && sleep 1
@@ -181,11 +187,11 @@ override_fp () {
  	# we noticed an issue with cursors being consistent on certain apps, such as firefox. 
   	# this function runs flatpak override commands to make the appearance more consistent.
    	local location_1="/home/$USER/.icons/"
-    	local location_2="/usr/share/icons/"
-     	echo "Overriding Flatpak appearance settings..." && sleep 1
-     	flatpak --user override --filesystem=$location_1:ro
-      	flatpak --user override --filesystem=$location_2:ro
-        echo "Flatpak overrides finished." && sleep 1
+    local location_2="/usr/share/icons/"
+     echo "Overriding Flatpak appearance settings..." && sleep 1
+     flatpak --user override --filesystem=$location_1:ro
+      flatpak --user override --filesystem=$location_2:ro
+      echo "Flatpak overrides finished." && sleep 1
 }
 main () {
 	# 'main' function
