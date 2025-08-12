@@ -20,9 +20,9 @@
         "pulseaudio",
         "network",
         "battery",
-        "power-profiles-daemon",
+        //"power-profiles-daemon",
         "backlight",
-        "idle_inhibitor",
+        //"idle_inhibitor",
         "tray",
         "custom/power"
     ],
@@ -139,7 +139,7 @@
         "menu": "on-click",
         "menu-file": "/usr/share/waybar/custom_modules/power_menu.xml",
         "menu-actions": {
-            "shutdown": "shutdown",
+            "shutdown": "sh -c 'systemctl poweroff'",
             "reboot": "reboot",
             "suspend": "systemctl suspend",
             "hibernate": "systemctl hibernate"
