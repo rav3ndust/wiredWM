@@ -90,6 +90,7 @@ make_folders () {
 	sudo mkdir -p $HOME/.config/dunst && sudo touch $HOME/.config/dunst/dunstrc
 	sudo mkdir -p /etc/conky && sudo touch /etc/conky/conky.conf
  	sudo mkdir -p $HOME/.config/rofi && sudo touch $HOME/.config/rofi/config.rasi 
+    sudo mkdir -p $HOME/.config/foot && sudo touch $HOME/.config/foot/foot.ini
 }
 install_wired_pkgs () {	
 	# this function updates and intalls the needed deps for wiredWM
