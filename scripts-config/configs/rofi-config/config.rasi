@@ -1,7 +1,7 @@
 configuration {
     modi: "combi";
     combi-modi: "window,drun,run";
-    font: "Inter Bold 12";	// you can replace this with your desired font if you wish
+    font: "Jetbrains Mono 12";	// you can replace this with your desired font if you wish
     show-icons: true;
     icon-theme: "Papirus"; 	// you can replace this with your desired icon theme if you wish 
     display-window: "Windows";
@@ -16,11 +16,11 @@ configuration {
 
 * {
     background: #000000;
-    foreground: #39ff14;
+    foreground: #ff10f0;
     accent: #ff10f0;
     text-color: #39ff14;
     border-color: #ff10f0;
-    selected-background: #ff10f0;
+    selected-background: #000000;
     selected-foreground: #000000;
 }
 
@@ -55,7 +55,7 @@ listview {
     background-color: @background;
     border: 0;
     spacing: 5px;
-    scrollbar: false;
+    scrollbar: true;
 }
 
 element {
