@@ -118,8 +118,8 @@ exec --no-startup-id dunst
 # You can edit your City and the widget by right-clicking it, and selecting 'settings.'
 exec_always --no-startup-id sh -c "sleep 1 && meteo-qt &"
 
-# we use Flameshot for easily taking screenshots from the panel.
-exec_always --no-startup-id sh -c "sleep 1 && flameshot &"
+# we use Flameshot for easily taking screenshots from the panel (legacy - we're using `grimshot` these days).
+#exec_always --no-startup-id sh -c "sleep 1 && flameshot &"
 
 # we use lxpolkit to handle priv escalation when needed.
 exec --no-startup-id lxpolkit
@@ -187,11 +187,11 @@ bindsym $mod+Shift+f exec --no-startup-id "nemo"
 # add a popup notification showing when Caps_Lock has been pressed
 bindsym Caps_Lock exec --no-startup-id "notify-send 'wired helper' 'Caps Lock pressed.'"
 
-# add a keybinding for quick screenshots (currently using `flameshot gui` for this functionality
-# also using grimshot and shotman. uncomment the one you'd like to use on wiredWM!
+# add a keybinding for quick screenshots (currently using `grimshot` for this functionality by default)
+# also have flameshot and shotman here as options. uncomment the one you'd like to use on wiredWM!
 #bindsym $mod+p exec --no-startup-id "flameshot gui"
-#bindsym $mod+p exec --no-startup-id "grimshot copy area" 
-bindsym $mod+p exec --no-startup-id "shotman -C --capture region"
+bindsym $mod+p exec --no-startup-id "grimshot savecopy area $HOME/Pictures/Screenshots/$(date -Ins).png --notify" 
+#bindsym $mod+p exec --no-startup-id "shotman -C --capture region"
 
 # add a keybind for selecting emoji
 bindsym Mod1+e exec --no-startup-id "gnome-characters"
