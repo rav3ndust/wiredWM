@@ -3,7 +3,7 @@
  * a copy of this file should live at /etc/xdg/waybar/style.css */
 * {
     font-size: 10px; /* Font size for better readability */
-    font-family: Inter;
+    font-family: Jetbrains Mono;
     font-weight: bold; /* Make all text bold */
 }
 
