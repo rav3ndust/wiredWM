@@ -1,7 +1,7 @@
 configuration {
     modi: "combi";
     combi-modi: "window,drun,run";
-    font: "Fira Code 12";	// you can replace this with your desired font if you wish
+    font: "Noto Sans 12";	// you can replace this with your desired font if you wish
     show-icons: true;
     icon-theme: "Papirus"; 	// you can replace this with your desired icon theme if you wish 
     display-window: "Windows";
