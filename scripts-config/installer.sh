@@ -12,7 +12,7 @@
 # - conky.conf lives at /etc/conky/conky.conf
 ########################################################
 # Some notes on the packages we need to download on installation: 
-# - we use *flameshot* for taking screenshots.
+# - we use *grimshot* for taking screenshots.
 # - we use *nm-applet* for handling networks - i3 ships with this.
 # - we use *blueman* for handling bluetooth connections. 
 #	- *blueman-applet* is the applet for interfacing with connections.
@@ -193,8 +193,8 @@ override_fp () {
     local location_2="/usr/share/icons/"
      echo "Overriding Flatpak appearance settings..." && sleep 1
      flatpak --user override --filesystem=$location_1:ro
-      flatpak --user override --filesystem=$location_2:ro
-      echo "Flatpak overrides finished." && sleep 1
+     flatpak --user override --filesystem=$location_2:ro
+     echo "Flatpak overrides finished." && sleep 1
 }
 main () {
 	# 'main' function
