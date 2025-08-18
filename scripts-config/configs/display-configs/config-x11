@@ -1,4 +1,5 @@
 # wired config (x11 version)
+# ( - this file should live at ~/.config/i3/config)
 # this file won't be overwritten, so feel free to edit it as you see fit!
 # for reference, please see these links: 
 #	- https://rav3ndust.xyz/wiki/wiredWM.html
