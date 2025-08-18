@@ -122,7 +122,7 @@ exec --no-startup-id lxpolkit
 #exec --no-startup-id xcompmgr
 # - - - testing picom
 # - - - use the `-c` flag if we want shadowing
-exec --no-startup-id "picom -f -c -e 0.9 --corner-radius 3"
+exec --no-startup-id "picom -f -c -e 0.9 --backend glx --corner-radius 3"
 ##############################
 
 # Use pactl to adjust volume in PulseAudio.
