@@ -1,9 +1,12 @@
+// wired nightshade launcher
+// this is the default launcher used to launch apps and run commands in wired.
+// this file should live at ( $HOME/.config/rofi/config.rasi )
 configuration {
     modi: "combi";
     combi-modi: "window,drun,run";
-    font: "Noto Sans 12";	// you can replace this with your desired font if you wish
+    font: "Noto Sans 12";	
     show-icons: true;
-    icon-theme: "Papirus"; 	// you can replace this with your desired icon theme if you wish 
+    icon-theme: "Papirus"; 	
     display-window: "Windows";
     display-drun: "Apps";
     display-run: "Run";
@@ -21,7 +24,7 @@ configuration {
     text-color: #39ff14;
     border-color: #ff10f0;
     selected-background: #000000;
-    selected-foreground: #000000;
+    selected-foreground: #39ff14;  
 }
 
 window {
@@ -54,25 +57,51 @@ entry {
 listview {
     background-color: @background;
     border: 0;
-    spacing: 5px;
+    spacing: 0;  
     scrollbar: true;
 }
 
 element {
     background-color: @background;
     text-color: @foreground;
-    padding: 5px;
+    padding: 0;  
+    border: 0;   
 }
 
 element selected {
     background-color: @selected-background;
     text-color: @selected-foreground;
     border: 1;
-    border-color: @accent;
+    border-color: #39ff14;
+}
+
+element selected.normal {
+    background-color: @selected-background;
+    text-color: @selected-foreground;
+}
+
+element selected.active {
+    background-color: @selected-background;
+    text-color: @selected-foreground;  
 }
 
 element-text {
-    background-color: inherit;
+    background-color: #000000;
     text-color: inherit;
-    highlight: @accent; // Fixed line
+    highlight: @accent;
+}
+
+element normal {
+    background-color: #000000;
+    text-color: @foreground;
+}
+
+element active {
+    background-color: #000000;
+    text-color: @foreground;
+}
+
+element-icon {  
+    background-color: #000000;
+    padding: 0;  
 }
