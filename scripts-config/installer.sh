@@ -66,8 +66,9 @@ WIRED_DUNSTRC="$HOME/wiredWM/scripts-config/configs/dunstrc"
 VIM_CONFIG="$HOME/.vimrc"
 WIRED_VIM_CONFIG="$HOME/wiredWM/scripts-config/configs/vimrc" 
 DEF_WP_LOCATION="$HOME/wiredWM/wp/lain3wp.jpg"
-WAYBAR_CONFIG="$HOME/wiredWM/scripts-config/configs/wayland-config/config"
-WAYBAR_CONFIG_LOCATION="/etc/xdg/waybar/config"
+WAYBAR_CONFIG="$HOME/wiredWM/scripts-config/configs/wayland-config/config.jsonc"
+WAYBAR_CONFIG_LOCATION="/etc/xdg/waybar/config.jsonc"
+WAYBAR_USER_CONFIG_LOCATION="$HOME/.config/waybar/config.jsonc"
 WAYBAR_CSS_CONFIG="$HOME/wiredWM/scripts-config/configs/wayland-config/style.css"
 WAYBAR_CSS_CONFIG_LOCATION="/etc/xdg/waybar/style.css"
 ROFI_CONFIG="$HOME/wiredWM/scripts-config/configs/rofi-config/config.rasi"
@@ -85,8 +86,10 @@ make_folders () {
 	sleep 1
 	sudo mkdir -p /etc/i3 && sudo touch /etc/i3/config
 	sudo mkdir -p $HOME/.config/i3 && sudo touch $HOME/.config/i3/config
+ 	sudo mkdir -p $HOME/.config/sway && sudo touch $HOME/.config/sway/config
 	sudo touch /etc/i3status.conf
 	sudo mkdir -p /etc/dunst && sudo touch /etc/dunst/dunstrc
+ 	sudo mkdir -p $HOME/.config/waybar && sudo touch $HOME/.config/waybar/config.jsonc
 	sudo mkdir -p $HOME/.config/dunst && sudo touch $HOME/.config/dunst/dunstrc
 	sudo mkdir -p /etc/conky && sudo touch /etc/conky/conky.conf
  	sudo mkdir -p $HOME/.config/rofi && sudo touch $HOME/.config/rofi/config.rasi 
@@ -97,7 +100,7 @@ make_folders () {
 install_wired_pkgs () {	
 	# this function updates and intalls the needed deps for wiredWM
 	sudo apt-get update
-	sudo apt-get install -y i3 i3lock-fancy nitrogen pamixer pulseaudio-utils xcompmgr picom waybar slock alacritty fonts-inter xterm arandr rofi xss-lock feh volumeicon-alsa polybar blueman dunst flameshot meteo-qt pasystray ffmpeg kitty stterm surf conky-all suckless-tools lxpolkit lxappearance vim nnn cmus xscreensaver amfora sway swaylock swayidle swaybg grimshot xdg-desktop-portal-wlr qt5ct tty-clock wf-recorder sakura foot gsimplecal calcurse pavucontrol yaru-theme-gtk yaru-theme-icon pipx gnome-characters tmux shotman nwg-look fonts-jetbrains-mono fonts-firacode fonts-noto wdisplays
+	sudo apt-get install -y i3 i3lock-fancy nitrogen pamixer opendoas pulseaudio-utils xcompmgr picom waybar slock alacritty fonts-inter xterm arandr nemo rofi xss-lock feh volumeicon-alsa polybar blueman dunst flameshot meteo-qt pasystray ffmpeg kitty stterm surf conky-all suckless-tools lxpolkit lxappearance vim nnn cmus xscreensaver amfora sway swaylock swayidle swaybg grimshot xdg-desktop-portal-wlr qt5ct tty-clock wf-recorder sakura foot gsimplecal calcurse pavucontrol yaru-theme-gtk yaru-theme-icon pipx gnome-characters tmux shotman nwg-look fonts-jetbrains-mono fonts-firacode fonts-noto wdisplays
 } 
 apply_configs () {
 	# this function applies the configs for: 
@@ -144,7 +147,8 @@ apply_configs () {
 	sleep 1 
 	# apply the waybar config and stylesheet to /etc/xdg/waybar/config and /etc/xdg/waybar/style.css respectively (wayland)
 	echo "Copying waybar configs..." && sleep 1
-	sudo cp -f $WAYBAR_CONFIG $WAYBAR_CONFIG_LOCATION		# config file copy
+	sudo cp -f $WAYBAR_CONFIG $WAYBAR_CONFIG_LOCATION			# config file copy
+ 	sudo cp -f $WAYBAR_CONFIG $WAYBAR_USER_CONFIG_LOCATION      # user-config copy
 	sudo cp -f $WAYBAR_CSS_CONFIG $WAYBAR_CSS_CONFIG_LOCATION	# stylesheet copy
 	echo "waybar configs copied." && sleep 1
  	# apply for config for rofi ($HOME/.config/rofi/config.rasi)
@@ -177,6 +181,23 @@ apply_configs () {
    	apply_nslock
 	copy_learn_script
 }
+setup_doas () {
+	# sets up 'opendoas': a great alternative to 'sudo'
+    echo "Configuring doas for privilege escalation..."; sleep 1
+	sudo touch /etc/doas.conf
+    # allow $USER to run root commands
+	echo "permit persist "${USER}" as root" | sudo tee /etc/doas.conf
+    echo "Doas has been installed and configured."; sleep 1
+	echo "You can now use doas instead of sudo for privilege escalation, if you prefer."; sleep 1
+ }
+ setup_flatpak () {
+    # ensure flatpak and flathub are setup for extra apps, if the user wants them
+	echo "Setting up Flatpak and configuring Flathub for extra software availability..."; sleep 1
+    sudo apt install flatpak gnome-software-plugin-flatpak -y
+	flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+    echo "Flatpak is now setup and configured with Flathub so you can choose apps that might not be available or up to date in standard repos."; sleep 1
+	echo "Open the Software Center or visit https://flathub.org to view and choose extra software!"; sleep 1
+}
 wp_set () {
 	# this function uses nitrogen to set the default wallpaper.
 	# we are going to use wp/lainwp3.png.
@@ -203,7 +224,8 @@ main () {
 	sleep 1
 	install_wired_pkgs		
 	make_folders				
-	apply_configs	
+	apply_configs
+    setup_doas
  	override_fp
 	wp_set					
 	# x x x x x x x x x x x x x x x x x x 
