@@ -53,7 +53,6 @@ client.unfocused 	#000000   #000000    #ff3131
 # is used in the bar {} block below.
 #font pango:Ubuntu 10
 #font pango:Cantarell 10
-#font pango:Inter Bold 10
 font pango:Noto Sans 10
 #font pango:Quicksand 10
 #font pango:Poppins 10
@@ -123,7 +122,7 @@ exec --no-startup-id lxpolkit
 #exec --no-startup-id xcompmgr
 # - - - testing picom
 # - - - use the `-c` flag if we want shadowing
-exec --no-startup-id "picom -f -c -e 0.9 --backend glx --corner-radius 3"
+exec --no-startup-id "picom -f -c -e 0.9 --corner-radius 3"
 ##############################
 
 # Use pactl to adjust volume in PulseAudio.
@@ -153,13 +152,13 @@ bindsym $mod+Shift+q kill
 
 # start applications and run commands (your choice of dmenu or rofi)
 # start dmenu (a program launcher) - nightshade customized dmenu
-bindsym $mod+d exec dmenu_run -fn "NotoSans-10" -nb black -nf pink -sb green -sf red -p "nightshade - run command: "
+bindsym $mod+d exec dmenu_run -fn "Inter-10" -nb black -nf pink -sb green -sf red -p "nightshade - run command: "
 # rofi version of the above
 #bindsym $mod+d exec --no-startup-id "rofi -show run -theme purple -font 'Quicksand Bold 10'"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+Shift+a exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -fn "NotoSans-10" -i -nb black -nf pink -sb green -sf red -p "nightshade - Applications List: "'
+bindsym $mod+Shift+a exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -fn "Inter-10" -i -nb black -nf pink -sb green -sf red -p "nightshade - Applications List: "'
 # rofi version of the above.
 #bindsym $mod+Shift+a exec --no-startup-id "rofi -show drun -theme purple -font 'Inter Bold 10'"
 
@@ -176,6 +175,9 @@ bindsym $mod+Shift+n exec --no-startup-id "dunstctl history-pop"
 
 # add a shortcut for popping the calendar
 bindsym $mod+c exec --no-startup-id "gsimplecal"
+
+# add a shortcut for popping out agenda/calenar (calcurse)
+bindsym Mod1+c exec --no-startup-id "st -e calcurse"
 
 # add a shortcut for popping out our file manager - we use 'nemo'
 bindsym $mod+Shift+f exec --no-startup-id "nemo"
@@ -320,44 +322,42 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # you can uncomment this if you want to replace i3bar with polybar.
-# exec --no-startup-id polybar
+exec --no-startup-id polybar
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
+#bar {
 	# uncomment the below if we want statusbar on top.
-	position top
+#	position top
         # two choices of bars here:
 	# we have custom waybar and swaybar configurations.
 	# just uncomment the one you want to use! :)
 	#swaybar_command waybar
-    	status_command i3status	
+#   	status_command i3status	
 	# font choices we like - Ubuntu, Inter, Noto Sans, and Cantarell.
 	# all are nice and readable in wired.
 	# use the font of your choice by commenting/uncommenting them.
-	font pango:Noto Sans 10
 	#font pango:Ubuntu 10
 	#font pango:Cantarell 10
 	#font pango:Inter 10
 	#font pango:ubuntu-title 11
 	#font pango:Quicksand Bold 10
-	#font pango:Inter Bold 10
-	colors {
-		focused_workspace #ff10f0 #000000e5 #39FF14
-		inactive_workspace #000000 #000000e5 #ff3131
-		separator #ff10f0
-		statusline #ff10f0
-		background #000000e5
-	}
-}
+#	font pango:Inter Bold 10
+#	colors {
+#		focused_workspace #ff10f0 #000000e5 #39FF14
+#		inactive_workspace #000000 #000000e5 #ff3131
+#		separator #ff10f0
+#		statusline #ff10f0
+#		background #000000e5
+#	}
+#}
 
-# custom conky displaying time, a message, and date:
+# custom conky displaying time, a message, and date in US format:
 exec --no-startup-id conky
 
 # we're using xautolock+i3lock to lock the screen after 10 mins of inactivity. The screen will blank and you'll be prompted for your password.
 # you can change the lock time by editing the number behind the -time flag. You can also edit the color of the lock screen using hexadecimal. Right now, it is set to purple (6a0dad)
 #exec xautolock -detectsleep -time 10 -locker "i3lock -c 000000"
-exec xautolock -detectsleep -time 10 -locker "i3lock-fancy"
 # We're using xscreensaver to handle screensaving and autolock.
 #exec --no-startup-id xscreensaver
 
