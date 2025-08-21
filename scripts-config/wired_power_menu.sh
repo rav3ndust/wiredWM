@@ -4,9 +4,9 @@
 # - this file should be copied to /usr/bin/power_menu
 MENU="$(rofi -sep '|' -dmenu -p 'wired system menu' <<< 'shutdown|reboot|suspend|hibernate')"
 case "$MENU" in
-    Shutdown) systemctl poweroff ;;
-    Reboot) systemctl reboot ;;
-    Suspend) systemctl suspend ;;
-    Hibernate) systemctl hibernate ;;
+    shutdown) systemctl poweroff ;;
+    reboot) systemctl reboot ;;
+    suspend) systemctl suspend ;;
+    hibernate) systemctl hibernate ;;
 esac
 rav3ndus
