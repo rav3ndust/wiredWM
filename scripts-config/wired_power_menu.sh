@@ -1,10 +1,12 @@
 #!/bin/bash
+# - - - wired power menu - - -
 # power menu script for our polybar to match our waybar's custom/power launcher
 # - this file should be copied to /usr/bin/power_menu
-MENU="$(rofi -sep '|' -dmenu -p 'Power Menu' <<< 'Shutdown|Reboot|Suspend|Hibernate')"
+MENU="$(rofi -sep '|' -dmenu -p 'wired system menu' <<< 'shutdown|reboot|suspend|hibernate')"
 case "$MENU" in
     Shutdown) systemctl poweroff ;;
-    Reboot) reboot ;;
+    Reboot) systemctl reboot ;;
     Suspend) systemctl suspend ;;
     Hibernate) systemctl hibernate ;;
 esac
+rav3ndus
