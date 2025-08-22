@@ -58,6 +58,10 @@ i3_CONFIG_2_LOCATION="$HOME/.config/i3/config"
 WIRED_i3_CONFIG="$HOME/wiredWM/scripts-config/configs/i3-config"
 i3STATUS_LOCATION="/etc/i3status.conf"
 WIRED_i3STATUS_CONFIG="$HOME/wiredWM/scripts-config/configs/i3status-config"
+WIRED_POLYBAR_CONFIG="$HOME/wiredWM/scripts-config/configs/polybar-config/config.ini"
+WIRED_POLYBAR_LOCATION="/etc/polybar/config.ini"
+WIRED_PICOM_CONFIG="$HOME/wiredWM/scripts-config/configs/picom.conf"
+WIRED_PICOM_LOCATION="$HOME/.config/picom/picom.conf"
 CONKY_CONFIG_LOCATION="/etc/conky/conky.conf"
 WIRED_CONKY_CONFIG="$HOME/wiredWM/scripts-config/configs/conky.conf"
 DUNSTRC_CONFIG_LOCATION_1="/etc/dunst/dunstrc"
@@ -92,6 +96,8 @@ make_folders () {
  	sudo mkdir -p $HOME/.config/waybar && sudo touch $HOME/.config/waybar/config.jsonc
 	sudo mkdir -p $HOME/.config/dunst && sudo touch $HOME/.config/dunst/dunstrc
 	sudo mkdir -p /etc/conky && sudo touch /etc/conky/conky.conf
+    sudo mkdir -p /etc/polybar && sudo touch /etc/polybar/config.ini
+    sudo mkdir -p $HOME/.config/picom && sudo touch $HOME/.config/picom/picom.conf
  	sudo mkdir -p $HOME/.config/rofi && sudo touch $HOME/.config/rofi/config.rasi 
     sudo mkdir -p $HOME/.config/foot && sudo touch $HOME/.config/foot/foot.ini
 	# we also ensure $HOME/Pictures/Screenshots exists, as we use this location as the default folder for saving screenshots 
@@ -106,6 +112,8 @@ apply_configs () {
 	# this function applies the configs for: 
 	#	- i3
 	#	- i3status
+    #   - polybar
+	#   - picom
 	#	- conky
 	#	- dunst
 	#	- vim
@@ -124,9 +132,16 @@ apply_configs () {
 	# apply the i3status-config file to /etc/i3status.conf
 	echo "Copying i3status-config..."
 	sudo cp -f $WIRED_i3STATUS_CONFIG $i3STATUS_LOCATION
-	sleep 1
 	echo "i3status-config copied." && sleep 1
 	echo "You can edit it anytime at /etc/i3status.conf" && sleep 1
+    # apply the polybar config to /etc/polybar/config.ini
+	echo "Copying polybar config..."
+    sudo cp -f $WIRED_POLYBAR_CONFIG $WIRED_POLYBAR_LOCATION
+    echo "Polybar config has been copied." && sleep 1 
+	# apply the picom config to .config/picom/picom.conf
+    echo "Copying picom config..."; sleep 1
+	sudo cp -f $WIRED_PICOM_CONFIG $WIRED_PICOM_LOCATION
+    echo "Picom config has been copied."; sleep 1
 	# apply the conky config to /etc/conky/conky.conf
 	echo "Copying conky.conf..."
 	sudo cp -f $WIRED_CONKY_CONFIG $CONKY_CONFIG_LOCATION
@@ -178,8 +193,14 @@ apply_configs () {
 	    local learn_script="learn.sh"
 	    chmod +x $learn_script; sudo cp $learn_script /usr/bin/learn
 	 }
+    copy_power_menu () {
+	    # applies the wired_power_menu script to /usr/bin/power_menu
+		local power_menu="$HOME/wiredWM/scripts-config/wired_power_menu.sh"
+        chmod +x $power_menu; sudo cp $power_menu /usr/bin/power_menu
+	}
    	apply_nslock
 	copy_learn_script
+    copy_power_menu
 }
 setup_doas () {
 	# sets up 'opendoas': a great alternative to 'sudo'
