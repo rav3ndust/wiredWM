@@ -9,4 +9,3 @@ case "$MENU" in
     suspend) systemctl suspend ;;
     hibernate) systemctl hibernate ;;
 esac
-rav3ndus
