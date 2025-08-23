@@ -179,6 +179,13 @@ apply_configs () {
 	echo "Copying tmux config..." && sleep 1
  	sudo cp -f $TMUX_CONFIG $TMUX_CONFIG_LOCATION
   	echo "tmux config has been copied." && sleep 1
+    # function to make sure the environment is correct
+	apply_environment () {
+ 	    # applies 'environment' to /etc/environment
+	    # ensures the PATH is correctly passed to wired
+	    local environ="/etc/environment"
+	    sudo cp -f environment $environ
+	 }
 	# function for creating our custom lockscreen (wayland)
  	apply_nslock() {
   		# applies the nslock script to /usr/bin. is only used on wayland.
@@ -198,6 +205,7 @@ apply_configs () {
 		local power_menu="$HOME/wiredWM/scripts-config/wired_power_menu.sh"
         chmod +x $power_menu; sudo cp $power_menu /usr/bin/power_menu
 	}
+    apply_environment
    	apply_nslock
 	copy_learn_script
     copy_power_menu
