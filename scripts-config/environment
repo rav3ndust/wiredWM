@@ -1,0 +1,2 @@
+# this file should be written to /etc/environment
+PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
