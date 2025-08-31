@@ -199,6 +199,17 @@ bindsym Caps_Lock exec --no-startup-id "notify-send 'wired helper' 'Caps Lock pr
 bindsym $mod+p exec --no-startup-id "grimshot savecopy area $HOME/Pictures/Screenshots/$(date -Ins).png --notify" 
 #bindsym $mod+p exec --no-startup-id "shotman -C --capture region"
 
+# add a keybind for launching htop to monitor system stats
+bindsym Mod1+h exec --no-startup-id "foot -e htop"
+
+# add a keybind for launching one of our default browsers
+# select which one you want this keybinding to effect by uncommenting your preferred browser option
+# we include firefox nightly, brave nightly, vivaldi, and chromium
+bindsym Mod1+b exec --no-startup-id "firefox-nightly"
+#bindsym Mod1+b exec --no-startup-id "brave-browser-nightly"
+#bindsym Mod1+b exec --no-startup-id "chromium"
+#bindsym Mod1+b exec --no-startup-id "vivaldi"
+
 # add a keybind for selecting emoji
 bindsym Mod1+e exec --no-startup-id "gnome-characters"
 
@@ -388,3 +399,4 @@ default_border pixel 3
 # XXX: 	- - - Special Section For Local Machine - - -
 # You can use this section for special commands you might need to run on your local machine.
 # For uniformity, please don't commit anything below this line to the public repo.
+###################################
