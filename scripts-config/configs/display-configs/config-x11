@@ -152,13 +152,13 @@ bindsym $mod+Shift+q kill
 
 # start applications and run commands (your choice of dmenu or rofi)
 # start dmenu (a program launcher) - nightshade customized dmenu
-bindsym $mod+d exec dmenu_run -fn "NotoSans-10" -nb black -nf pink -sb green -sf red -p "nightshade - run command: "
+bindsym $mod+d exec dmenu_run -fn "Inter-10" -nb black -nf pink -sb green -sf red -p "nightshade - run command: "
 # rofi version of the above
 #bindsym $mod+d exec --no-startup-id "rofi -show run -theme purple -font 'Quicksand Bold 10'"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+Shift+a exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -fn "NotoSans-10" -i -nb black -nf pink -sb green -sf red -p "nightshade - Applications List: "'
+bindsym $mod+Shift+a exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -fn "Inter-10" -i -nb black -nf pink -sb green -sf red -p "nightshade - Applications List: "'
 # rofi version of the above.
 #bindsym $mod+Shift+a exec --no-startup-id "rofi -show drun -theme purple -font 'Inter Bold 10'"
 
@@ -179,6 +179,13 @@ bindsym $mod+c exec --no-startup-id "gsimplecal"
 # add a shortcut for popping out agenda/calenar (calcurse)
 bindsym Mod1+c exec --no-startup-id "st -e calcurse"
 
+# add a keybinding for opening up a browser
+# we use `brave-browser-nightly`, `firefox-nightly`, and `chromium` regularly
+# choose which one you prefer this keybind to open by uncommenting it
+#bindsym Mod1+b exec --no-startup-id "firefox-nightly"
+#bindsym Mod1+b exec --no-startup-id "chromium"
+#bindsym Mod1+b exec --no-startup-id "brave-browser-nightly"
+
 # add a shortcut for popping out our file manager - we use 'nemo'
 bindsym $mod+Shift+f exec --no-startup-id "nemo"
 
@@ -189,6 +196,17 @@ bindsym Caps_Lock exec --no-startup-id "notify-send 'wired helper' 'Caps Lock pr
 # also using grimshot. uncomment the one you'd like to use on wiredWM!
 bindsym $mod+p exec --no-startup-id "flameshot gui"
 #bindsym $mod+p exec --no-startup-id "grimshot copy area" 
+
+# add a keybind for launching htop to monitor system stats
+bindsym Mod1+h exec --no-startup-id "sakura -x htop"
+
+# add a keybind for launching one of our default browsers
+# select which one you want this keybinding to effect by uncommenting your preferred browser option
+# we include firefox nightly, brave nightly, vivaldi, and chromium
+bindsym Mod1+b exec --no-startup-id "firefox-nightly"
+#bindsym Mod1+b exec --no-startup-id "brave-browser-nightly"
+#bindsym Mod1+b exec --no-startup-id "chromium"
+#bindsym Mod1+b exec --no-startup-id "vivaldi"
 
 # add a keybind for selecting emoji
 bindsym Mod1+e exec --no-startup-id "gnome-characters"
@@ -286,6 +304,9 @@ bindsym $mod+Shift+z exec "i3lock-fancy"
 #bindsym $mod+Shift+z exec "i3lock -c 000000"
 # or - on wayland, 'nslock':
 #bindsym $mod+Shift+z exec "nslock"
+
+# make a keybinding for Learn, a simple textfile showing our learning/help documentation
+bindsym $mod+Shift+h exec "learn"
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
