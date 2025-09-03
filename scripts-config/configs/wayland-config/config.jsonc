@@ -35,12 +35,12 @@
     "clock#1": {
         "format": "{:%a}",
         "tooltip": false,
-        "on-click": "st -e calcurse"
+        "on-click": "foot -e calcurse"
     },
     "clock#2": {
         "format": "{:%H:%M}",
         "tooltip": false,
-        "on-click": "st -e tty-clock"
+        "on-click": "foot -e tty-clock"
     },
     "clock#3": {
         "format": "{:%Y/%m/%d}",
@@ -71,7 +71,7 @@
             "format-disconnected": "⚠ Disconnected",
             "tooltip-format": "Wireless status -  {ifname}: {ipaddr}/{cidr}",
 	   "tooltip-format-wifi": "{essid}",
-            "on-click": "st -e nmtui",
+            "on-click": "foot -e nmtui",
             "interval": 5
         },
     // - - - XXX end testing section XXX - - - 
