@@ -120,7 +120,7 @@ I've put a lot of work into our `waybar` config. It has clickable modules, custo
 
 We want it to be 1:1 with the x11 version, so when I'm comfy with using it as my daily driver for awhile, I'll have a new repo up and linked here! The repo you're currently in, of course, will not be going anywhere. The x11 version is going to be being kept around for a long time to come.
 
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/cefd4052-8db0-4e50-9541-9b2185a78f03" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/89c6d3a0-d267-42f8-9bd6-cd6fcf307ace" />
 
 ### Wayland references
 
