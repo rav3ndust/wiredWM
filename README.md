@@ -5,7 +5,7 @@
 
 **wiredWM** is rav3ndust's personal fork of [i3](https://i3wm.org/), which is a tiling window manager for [X11](https://www.x.org/). There is also work ongoing to bring the configs over to [Sway](https://swaywm.org/), for [Wayland](https://wayland.freedesktop.org/).
 
-<img width="1365" height="767" alt="image" src="https://github.com/user-attachments/assets/4e2d291f-fd24-47c4-b2e4-670a407f4ae1" />
+<img width="1365" height="768" alt="image" src="https://github.com/user-attachments/assets/253b2219-b8bf-49c8-80d2-465fde175c4f" />
 
 ###### let's all love lain
 
@@ -13,7 +13,7 @@
 
 ## minimal and lightweight 
 
-<img width="1365" height="768" alt="image" src="https://github.com/user-attachments/assets/5cdf6bc0-8efd-40ad-ad85-0d97b7c2d2d3" />
+<img width="1365" height="768" alt="image" src="https://github.com/user-attachments/assets/bd0bcc42-5d8d-4d0e-9c22-dca29b73a9a2" />
 
 ###### minimal desktop and keyboard-driven for quick efficiency. clickable icons are located at the right side of the status bar for common tasks - for those unfortunate occasions where you have to reach for the mouse
 
@@ -31,7 +31,7 @@ Easy to use and easily extensible. Takes up very little of precious system resou
 
 ## more resources for your stuff
 
-<img width="1365" height="768" alt="image" src="https://github.com/user-attachments/assets/ae34d1e2-b9cd-44cb-9e01-cc1338f4ab45" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/c6de6c14-0c1e-48f2-bbf4-50036b70b82b" />
 
 ###### browse the web and run all of your favorite applications in a minimal environment 
 
@@ -43,7 +43,7 @@ For a general list of applications, you can also press *Meta+Shift+A* and scroll
 
 ## organize your windows with ease
 
-<img width="1365" height="768" alt="image" src="https://github.com/user-attachments/assets/c7f980d0-d308-4ce0-8426-46794f251c12" />
+<img width="1365" height="768" alt="image" src="https://github.com/user-attachments/assets/1b9c4392-8e63-4c28-9541-e27384d51702" />
 
 ###### automate the organization of the windows on your screen
 
