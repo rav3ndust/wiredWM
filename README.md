@@ -100,7 +100,7 @@ Some of our other major components are:
 
 ### are we wayland yet?
 
-![image](https://github.com/user-attachments/assets/7705fe4c-f98a-4919-8853-0ca072bee4ad)
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/21ecaac1-8847-41be-9ee7-df156854a7b2" />
 
 As mentioned above, work has been going on to move our configs over to Sway, for Wayland. 
 
@@ -108,7 +108,7 @@ I want to make sure everything works as flawlessly on the Wayland version of wir
 
  To that end, I will have a different repo for the Wayland version of wiredWM, so that anyone can easily grab the x11 or wayland version, whichever they prefer based on their needs.
 
-![image](https://github.com/user-attachments/assets/5a8b7617-8e0a-42a8-ad2f-0b825f3202b6)
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/5d7a0e51-d398-4d0b-9fa7-ab2b1afa0802" />
 
 We're using `waybar` in place of `polybar` in our Wayland configuration.
 
@@ -116,11 +116,11 @@ I've put a lot of work into our `waybar` config. It has clickable modules, custo
 
 `xdg-desktop-portal-wlr` is also included in the installation script, for apps that use portals.
 
-![image](https://github.com/user-attachments/assets/13aa24e2-13b7-43c9-9165-2d7738f3e42e)
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/4936b0c4-5716-4926-a77c-e0e566b7db08" />
 
 We want it to be 1:1 with the x11 version, so when I'm comfy with using it as my daily driver for awhile, I'll have a new repo up and linked here! The repo you're currently in, of course, will not be going anywhere. The x11 version is going to be being kept around for a long time to come.
 
-![image](https://github.com/user-attachments/assets/d8417ca3-10d5-4b1e-9645-956fbee058f1)
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/cefd4052-8db0-4e50-9541-9b2185a78f03" />
 
 ### Wayland references
 
