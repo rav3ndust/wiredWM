@@ -6,6 +6,7 @@
 #	( NOTE: This version of the script is for Debian-based installations.)
 # This is the installer script for wiredWM. 
 # Important info for config files: 
+# - sway config lives at ~/.config/sway/config
 # - i3 config lives at /etc/i3/config and ~/.config/i3/config
 # - i3status config lives at /etc/i3status.conf
 # - dunst config (dunstrc) needs to live at /etc/dunst/dunstrc, and be copied to ~/.config/dunst/dunstrc
@@ -53,9 +54,10 @@
 # - we have our wrapper around *swaylock* called *nslock* which is a custom lockscreen
 # - we include *wf-recorder* for recording the screen
 ########################################################
-i3_CONFIG_1_LOCATION="/etc/i3/config"
-i3_CONFIG_2_LOCATION="$HOME/.config/i3/config"
-WIRED_i3_CONFIG="$HOME/wiredWM/scripts-config/configs/i3-config"
+WIRED_X11_CONFIG="$HOME/wiredWM/scripts-config/configs/display-configs/config-x11"
+WIRED_WAYLAND_CONFIG="$HOME/wiredWM/scripts-config/configs/display-configs/config-wayland"
+WIRED_X11_CONFIG_LOCATION="$HOME/.config/i3/config"
+WIRED_WAYLAND_CONFIG_LOCATION="$HOME/.config/sway/config"
 i3STATUS_LOCATION="/etc/i3status.conf"
 WIRED_i3STATUS_CONFIG="$HOME/wiredWM/scripts-config/configs/i3status-config"
 WIRED_POLYBAR_CONFIG="$HOME/wiredWM/scripts-config/configs/polybar-config/config.ini"
@@ -81,6 +83,8 @@ TMUX_CONFIG="$HOME/wiredWM/scripts-config/configs/tmux.conf"
 TMUX_CONFIG_LOCATION="$HOME/.tmux.conf"
 FOOT_CONFIG="$HOME/wiredWM/scripts-config/configs/foot.ini"
 FOOT_CONFIG_LOCATION="$HOME/.config/foot/foot.ini"
+ALACRITTY_CONFIG="$HOME/wiredWM/scripts-config/configs/alacritty.toml"
+ALACRITTY_CONFIG_LOCATION="$HOME/.config/alacritty/alacritty.toml"
 ########################################################
 # - - - Functions - - - 
 ########################################################
@@ -100,6 +104,7 @@ make_folders () {
     sudo mkdir -p $HOME/.config/picom && sudo touch $HOME/.config/picom/picom.conf
  	sudo mkdir -p $HOME/.config/rofi && sudo touch $HOME/.config/rofi/config.rasi 
     sudo mkdir -p $HOME/.config/foot && sudo touch $HOME/.config/foot/foot.ini
+	sudo mkdir -p $HOME/.config/alacritty && sudo touch $HOME/.config/alacritty/alacritty.toml
 	# we also ensure $HOME/Pictures/Screenshots exists, as we use this location as the default folder for saving screenshots 
     mkdir -p $HOME/Pictures/Screenshots
 }
@@ -117,18 +122,21 @@ apply_configs () {
 	#	- conky
 	#	- dunst
 	#	- vim
+    #   - sway
 	#	- waybar
  	#	- rofi
   	#	- tmux
+    #   - alacritty
 	#	- other wayland-specific stuff
-	# apply the i3-config file to /etc/i3/config and ~/.config/i3/config
-	echo "Copying wiredWM configuration files..."
-	sleep 1
-	echo "Copying i3-config..."
-	sudo cp -f $WIRED_i3_CONFIG $i3_CONFIG_1_LOCATION
-	sudo cp -f $WIRED_i3_CONFIG $i3_CONFIG_2_LOCATION
-	echo "Done! If needed, you can edit your configuration files at ~/.config/i3/config anytime." 
-	sleep 1
+   	echo "Copying navi configuration files..." && sleep 1
+    # apply the x11 config file to ~/.config/i3/config
+    echo "Copying x11 config..." && sleep 1
+	sudo cp -f $WIRED_X11_CONFIG $WIRED_X11_CONFIG_LOCATION
+	echo "wired X11 configuration applied." && sleep 1
+    # apply the wayland config file to ~/.config/sway/config
+	echo "Copying wayland config..." && sleep 1
+    sudo cp -f $WIRED_WAYLAND_CONFIG $WIRED_WAYLAND_CONFIG_LOCATION
+	echo "wired Wayland configuration applied." && sleep 1
 	# apply the i3status-config file to /etc/i3status.conf
 	echo "Copying i3status-config..."
 	sudo cp -f $WIRED_i3STATUS_CONFIG $i3STATUS_LOCATION
@@ -179,6 +187,10 @@ apply_configs () {
 	echo "Copying tmux config..." && sleep 1
  	sudo cp -f $TMUX_CONFIG $TMUX_CONFIG_LOCATION
   	echo "tmux config has been copied." && sleep 1
+    # apply the config for alacritty
+	echo "Copying alacritty config..." && sleep 1
+    sudo cp -f $ALACRITTY_CONFIG $ALACRITTY_CONFIG_LOCATION
+	echo "alacritty config has been copied." && sleep 1
     # function to make sure the environment is correct
 	apply_environment () {
  	    # applies 'environment' to /etc/environment
