@@ -1,0 +1,53 @@
+# Alacritty config ( for navi )
+# this file belongs in: ~/.config/alacritty/alacritty.toml
+[window]
+opacity = 0.9
+padding = { x = 5, y = 5 }
+decorations = "full"
+dynamic_title = true
+
+[font]
+size = 12
+normal = { family = "Noto Sans Mono", style = "Regular" }
+bold = { family = "Noto Sans Mono", style = "Bold" }
+italic = { family = "Noto Sans Mono", style = "Italic" }
+
+[colors]
+[colors.primary]
+background = "#000000"
+foreground = "#ffffff"
+
+[colors.cursor]
+text = "#000000"
+cursor = "#ff10f0"
+
+[colors.selection]
+text = "#000000"
+background = "#39ff14"
+
+[colors.normal]
+black = "#000000"
+red = "#ff3131"
+green = "#39ff14"
+yellow = "#00ffff"
+blue = "#00ffff"
+magenta = "#ff10f0"
+cyan = "#00ffff"
+white = "#ffffff"
+
+[colors.bright]
+black = "#555555"
+red = "#ff3131"
+green = "#39ff14"
+yellow = "#00ffff"
+blue = "#00ffff"
+magenta = "#ff10f0"
+cyan = "#00ffff"
+white = "#ffffff"
+
+[bell]
+animation = "EaseOutExpo"
+duration = 0
+
+[mouse]
+hide_when_typing = true
