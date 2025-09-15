@@ -1,5 +1,7 @@
 #!/bin/bash
 # Display our helpful reference manual, 'learn', using a keybinding (Super+Shift+H)
-# Helps the user learn how to use wiredWM with built-in documentation.  
+# Helps the user learn how to use navi/wired with built-in documentation. 
+# the manual is a small website written in html and displayed using terminal browsers such as elinks.
+# this also allows us to have the same reference manual available on the web for easy reference. 
 help="manual/manual.html"
-foot -e elinks "$help"
+alacritty -e elinks "$help"
