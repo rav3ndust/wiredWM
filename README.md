@@ -3,7 +3,7 @@
 
 ### Welcome to the Wired
 
-**wiredWM** is rav3ndust's personal fork of [i3](https://i3wm.org/), which is a tiling window manager for [X11](https://www.x.org/). There is also work ongoing to bring the configs over to [Sway](https://swaywm.org/), for [Wayland](https://wayland.freedesktop.org/).
+**wiredWM** is built on top of [i3](https://i3wm.org/), which is a tiling window manager for [X11](https://www.x.org/). There is also work ongoing to bring the configs over to [Sway](https://swaywm.org/), for [Wayland](https://wayland.freedesktop.org/).
 
 <img width="1365" height="768" alt="image" src="https://github.com/user-attachments/assets/253b2219-b8bf-49c8-80d2-465fde175c4f" />
 
