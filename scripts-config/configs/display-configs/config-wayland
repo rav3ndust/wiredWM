@@ -21,8 +21,8 @@ exec_always --no-startup-id systemctl --user set-environment PATH="/usr/games:$H
 # set wallpaper
 exec swaybg -i $HOME/wiredWM/wp/synthwavelain.jpeg
 #exec swaybg -i $HOME/wiredWM/wp/lain4.png &
-# set mouse cursor theme (default: Adwaita)
-seat * xcursor_theme Adwaita
+# set mouse cursor theme (Yaru or Adwaita)
+seat * xcursor_theme Yaru
 # make windows float or tile by default.
 # comment/uncomment the below line to disable/enable tiling by default.
 #for_window [class="[.]*"] floating enable
