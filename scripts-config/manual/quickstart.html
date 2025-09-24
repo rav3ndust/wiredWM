@@ -1,0 +1,76 @@
+
+<!doctype html>
+<html>
+<style>
+	a:link {color: #FF3131;}
+	a:visited {color: #39FF14;}
+	code {color: #ff10f0; font-size: 16px}
+	head {
+		background-color: #000000;
+		color: white
+	}
+	body {
+		background-color: #000000;
+		color: white
+	}
+	footer {
+		background-color: #000000;
+		color: white;
+		text-align: center
+	}
+	.center {
+  		display: block;
+  		margin-left: auto;
+  		margin-right: auto;
+  		width: 50%;
+	}
+	 /* .breakHelper {
+			border: 0;
+			height: 6px;
+			background: linear-gradient(to right, #FF10F0, #39ff14);
+	} */	
+</style>
+<head>
+	<!--meta information-->
+	<meta name="description" content="Welcome to the Wired!">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Navi Quick Start</title>
+</head>
+<body>
+	<pre style="text-align:center;color:#ff10f0">.__   __.      ___   ____    ____  __
+|  \ |  |     /   \  \   \  /   / |  |
+|   \|  |    /  ^  \  \   \/   /  |  |
+|  . `  |   /  /_\  \  \      /   |  |
+|  |\   |  /  _____  \  \    /    |  |
+|__| \__| /__/     \__\  \__/     |__|</pre>
+	<h2 style="color:#39ff14;text-align:center">* * * * * * * * * * * * * * * * * * * * * * *</h2>	
+	<h1 style="color:#ff10f0;text-align:center">getting to know your window manager ~</h1>
+	<p><a href="manual.html">go back</a></p>
+	<p><b>navi</b> and <b>wired</b> are your gateway to a minimal, clean, keyboard-first tiling experience.</p>
+	<p>This page shows you the basics of the interface so you can jump right in and get started!</p>
+	<h3 style="color:#ff10f0">the interface</h3>
+	<p>When you log into <b>wired</b>, you will be greeted by a clean homescreen. You'll notice there are no icons on the desktop, just a beautiful wallpaper, a top panel, and an overall clean and retro aesthetic. Welcome to your window manager! Let's go over some of the basics of how to interact with it.</p>
+	<p><b>wired</b> is very keyboard-driven, and we are going to go over the keybindings for you in the next page, but there are, of course, plenty of operations you can perform with your mouse as well! Let's look at some of them and how you can interact with the desktop using your mouse, as well as other things you'll notice in the <b>wired</b> environment.</p>
+	<p>Up top, you'll see your top panel. This is our custom <code>waybar</code>, and not only does it look good, but it also contains several ways for you to control stuff on the system and get around the environment. Here is a list of items on the panel and things they can do:</p>
+	<ul>
+		<li><b>wired launcher</b> - this is the triangle logo at the panel's far left. Clicking it will open the launcher, allowing you to open applications. Just start typing the name of an app you want to launch, or scroll through the list!</li>
+		<li><b>workspaces</b> - these are the numbers beside the launcher. By default, you will be placed in <b>workspace 1</b>. Opening new workspaces will show their corresponding numbers in this area, and you can click on their number to go to them, or scroll the numbers to cycle through workspaces.</li>
+		<li><b>window title</b> - beside your workspaces, you will see the name of the currently focused window displayed, if any are open.</li>
+		<li><b>time and date</b> - in this area, you'll see the current day, the time, and the date. Clicking on the current day will launch <code>calcurse</code>, a calendar, todo list, and appointment management TUI application. Clicking on the time will launch <code>tty-clock</code>, displaying a big ASCII clock in a new TUI window. Clicking on the current date will launch <code>gsimplecal</code>, a small GTK calendar application that shows the current month view.</li>
+		<li><b>volume control</b> - to the right of the time and date modules, you can find the volume control, with a speaker icon denoting it. The volume percentage is displayed, and scrolling on the module will allow you to turn the volume up or down. Left-clicking it will mute/unmute the volume, and right-clicking it will launch <code>pavucontrol</code>, a GTK app allowing you to control audio and recording devices at a more granular level.</li>
+		<li><b>networks</b> - beside the volume module is the networks module, allowing you to see and connect to your wifi networks. Clicking on it will launch <code>nmtui</code>, a TUI application where you can select wifi networks and authenticate with them to connect. The percentage in the module shows your signal strength, and hovering it with your mouse shows the name of the network you're currently connected to.</li>
+		<li><b>battery</b> - if you are on a laptop, the battery module will display next to the network module. It will show you your current battery percentage.</li>
+		<li><b>brightness</b> - next to the battery module, you can see and control your system's display brightness. Scroll on the module with your mouse wheel to turn the display brightness up or down to your liking.</li>
+		<li><b>idle inhibitor</b> - the little <b>eye</b> icon is the idle inhibitor module. You can activate it to prevent your screen from locking, and deactivate it to return to normal behavior. By default, <b>wired</b> locks the screen after 15 minutes of inactivity, and suspends after 20.</li>
+		<li><b>systray</b> - your system tray module is where app icons go, things like communications apps like Discord or Telegram will show up here when they're open. By default, we have a weather applet here that you can configure with your city to see the weather, as well as a bluetooth management applet for connecting to your wireless devices. Other apps you open might appear in the systray with their icons if they need that functionality.</li>
+		<li><b>power management</b> - the little power icon on the far right of the panel is the power management module. Clicking it will give you options to Hibernate, Suspend, Shutdown, or Reboot your computer.</li>
+	</ul>
+	<p>As you can see, your top panel is your center of operations for many functionalities when it comes to interacting with <b>wired</b>.</p>
+	<p>Other than the top bar, when first logging in to <b>wired</b>, you will also see your wallpaper and our custom <code>conky</code> showing you the current time and date and a scrolling <i>"Let's all love lain"</i> message. As you can tell from the naming scheme and the overall desktop aesthetic, <b>wired</b>, and <b>navi</b> as a whole is heavily influenced by the <i>Serial Experiments Lain</i> aesthetic.</p>
+	<p>Now that you know the basic interface to your window manager, let's go over the keybindings so you can begin familiarizing yourself with how to get around with your keyboard! Once you get used to navigating your desktop using keyboard shortcuts, it will be hard for you to go back to more traditional desktop environments! Click the link below to move onto the next section.</p>
+	<p><b>Up next</b>: <a href="keybinds.html">keybindings</a></p>
+	</body>
+<footer>
+	<h2 style="color:#39ff14;text-align:center">* * * * * * * * * * * * * * * * * * * * * * *</h2>
+	<h6 style="color:#ff10f0;text-align:center">built with ❤️ by <a href="">xvoidsx</a></h6>
+</footer>
