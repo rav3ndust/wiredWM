@@ -127,6 +127,7 @@ apply_configs () {
  	#	- rofi
   	#	- tmux
     #   - alacritty
+	#   - foot
 	#	- other wayland-specific stuff
    	echo "Copying navi configuration files..." && sleep 1
     # apply the x11 config file to ~/.config/i3/config
