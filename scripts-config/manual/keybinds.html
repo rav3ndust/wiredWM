@@ -1,0 +1,98 @@
+
+<!doctype html>
+<html>
+<style>
+	a:link {color: #FF3131;}
+	a:visited {color: #39FF14;}
+	code {color: #ff10f0; font-size: 16px}
+	head {
+		background-color: #000000;
+		color: white
+	}
+	body {
+		background-color: #000000;
+		color: white
+	}
+	footer {
+		background-color: #000000;
+		color: white;
+		text-align: center
+	}
+	.center {
+  		display: block;
+  		margin-left: auto;
+  		margin-right: auto;
+  		width: 50%;
+	}
+	 /* .breakHelper {
+			border: 0;
+			height: 6px;
+			background: linear-gradient(to right, #FF10F0, #39ff14);
+	} */	
+</style>
+<head>
+	<!--meta information-->
+	<meta name="description" content="Welcome to the Wired!">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>wired keybindings help</title>
+</head>
+<body>
+	<pre style="text-align:center;color:#ff10f0">.__   __.      ___   ____    ____  __
+|  \ |  |     /   \  \   \  /   / |  |
+|   \|  |    /  ^  \  \   \/   /  |  |
+|  . `  |   /  /_\  \  \      /   |  |
+|  |\   |  /  _____  \  \    /    |  |
+|__| \__| /__/     \__\  \__/     |__|</pre>
+	<h2 style="color:#39ff14;text-align:center">* * * * * * * * * * * * * * * * * * * * * * *</h2>	
+	<h1 style="color:#ff10f0;text-align:center">keybindings ~</h1>
+	<p><a href="manual.html">go back</a></p>
+	<p>Here is a reference guide for the keybindings used in <b>wired</b>, our tiling window management setup in <b>naviOS</b>.</p>	
+	<blockquote><i>Please note that on most keyboards, the <b>Super</b> key is the <b>Windows</b> key, or the <b>Command</b> key on Apple keyboards</i>.</blockquote>
+	<h3 style="color:#ff10f0">Workspaces</h3>
+	<ul>
+		<li><b>Super+Number Keys</b> - move to a workspace corresponding to the number pressed.</li>
+	</ul>
+	<h3 style="color:#ff10f0">Opening Applications</h3>
+	<ul>
+		<li><b>Super+Enter</b> - opens a terminal window.</li>
+		<li><b>Super+Tab</b> - opens the "Nightshade Menu" to launch apps.</li>
+		<li><b>Super+D</b> - opens the "Nightshade Command Bar" to run commands.</li>
+		<li><b>Super+Shift+A</b> - opens the "Nightshade App List", another way to launch apps.</li>
+		<li><b>Alt+B</b> - opens your web browser.</li>
+		<li><b>Super+Shift+F</b> - opens your file manager.</li>
+		<li><b>Alt+H</b> - opens <code>htop</code> to view system resource usage.</li>
+		<li><b>Alt+C</b> - opens <code>calcurse</code>, a calendar, todo list, and appointment manager.</li>
+		<li><b>Super+C</b> - opens <code>gsimplecal</code>, a small GTK calendar.</li>
+	</ul>
+	<h3 style="color:#ff10f0">Window Management</h3>
+	<ul>
+		<li><b>Super+Shift+Q</b> - closes the currently focused window.</li>
+		<li><b>Super+Shift+Number Keys</b> - send the currently focused window to a chosen workspace.</li>
+		<li><b>Super+F</b> - places the currently focused window in <b>fullscreen</b> mode (use it again to exit <b>fullscreen</b> mode).</li>
+		<li><b>Super+Shift+Space</b> - floats the currently focused window (use it again to re-tile the window).</li>
+		<li><b>Super+W</b> - switches your tiled windows to <b>tabbed</b> mode.</li>
+		<li><b>Super+S</b> - switches your tiled windows to <b>stacked</b> mode.</li>
+		<li><b>Super+E</b> - switches your tiled windows to <b>tiled</b> mode if in another mode.</li>
+		<li><b>Super+Space</b> - switches focus between tiled and floating windows.</li>
+		<li><b>Super+R</b> - enter <b>resize</b> mode to change window size with arrow keys (use it again to exit <b>resize</b> mode).</li>
+		<li><b>Super+Shift+Arrow Keys</b> - swap the placement of windows on the grid.</li>
+		<li><b>Super+Arrow Keys</b> - switch focus between open windows.</li>
+		<li><b>Super+H</b> - tile the next window <b>horizontally</b>.</li>
+		<li><b>Super+V</b> - tile the next window <b>vertically</b>.</li>
+	</ul>
+	<h3 style="color:#ff10f0">System Operations</h3>
+	<ul>
+		<li><b>Super+Shift+N</b> - pop out your recent notifications.</li>
+		<li><b>Super+P</b> - take a screenshot and copy it to the clipboard (screenshots are saved at <code>$HOME/Pictures/Screenshots</code>).</li>
+		<li><b>Super+Shift+Z</b> - lock your screen, requiring your password to return to the desktop.</li>
+		<li><b>Super+Shift+R</b> - restart the window manager in-place.</li>
+		<li><b>Super+Shift+E</b> - log out of <b>wired</b>.</li>
+		<li><b>Super+Shift+H</b> - launch the <b>navi help manual</b> to learn how the system works.</li>
+	</ul>
+	<p>Note that if you wish to change any of these keybindings, or add your own, you can edit the configuration file location at <code>$HOME/.config/sway/config</code> and make any changes you wish!</p>
+	<p>Up next: <a href="navigation.html">navigation and getting around</a></p>
+	</body>
+<footer>
+	<h2 style="color:#39ff14;text-align:center">* * * * * * * * * * * * * * * * * * * * * * *</h2>
+	<h6 style="color:#ff10f0;text-align:center">built with ❤️ by <a href="">xvoidsx</a></h6>
+</footer>
