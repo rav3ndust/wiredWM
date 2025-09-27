@@ -21,8 +21,8 @@ exec_always --no-startup-id systemctl --user set-environment PATH="/usr/games:$H
 # set wallpaper
 exec swaybg -i $HOME/wiredWM/wp/synthwavelain.jpeg
 #exec swaybg -i $HOME/wiredWM/wp/lain4.png &
-# set mouse cursor theme (Yaru or Adwaita)
-seat * xcursor_theme Yaru
+# testing setting mouse theme
+seat * xcursor_theme Yaru 
 # make windows float or tile by default.
 # comment/uncomment the below line to disable/enable tiling by default.
 #for_window [class="[.]*"] floating enable
@@ -121,7 +121,6 @@ exec --no-startup-id dunst
 # you can click the widget to pop out a window with forecast.
 # You can edit your City and the widget by right-clicking it, and selecting 'settings.'
 exec_always --no-startup-id sh -c "sleep 1 && meteo-qt &"
-
 # we use Flameshot for easily taking screenshots from the panel (legacy - we're using `grimshot` these days).
 #exec_always --no-startup-id sh -c "sleep 1 && flameshot &"
 
@@ -146,13 +145,13 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal.
-# Our installed terminal emulators are "sakura", "foot", "ghostty", "st", "gnome-terminal", "mate-terminal", "kitty" and "alacritty."
+# Our installed terminal emulators are "sakura", "foot", "st", "gnome-terminal", "mate-terminal", "kitty" and "alacritty."
 # Choose which one works best for you!
 #bindsym $mod+Return exec sakura
-bindsym $mod+Return exec foot
+#bindsym $mod+Return exec foot
 #bindsym $mod+Return exec st
 #bindsym $mod+Return exec kitty
-#bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec alacritty
 #bindsym $mod+Return exec gnome-terminal
 #bindsym $mod+Return exec mate-terminal
 
@@ -186,9 +185,11 @@ bindsym $mod+Shift+n exec --no-startup-id "dunstctl history-pop"
 bindsym $mod+c exec --no-startup-id "gsimplecal"
 
 # add a shortcut for popping out agenda/calendar (calcurse)
-bindsym Mod1+c exec --no-startup-id "foot -e calcurse"
+bindsym Mod1+c exec --no-startup-id "alacritty -e calcurse"
 
-# add a shortcut for popping our file manager (nemo)
+# add a shortcut for popping our file manager (ranger, nnn, or nemo)
+#bindsym $mod+Shift+f exec --no-startup-id "foot -e ranger"
+#bindsym $mod+Shift+f exec --no-startup-id "foot -e nnn"
 bindsym $mod+Shift+f exec --no-startup-id "nemo"
 
 # add a popup notification showing when Caps_Lock has been pressed
@@ -201,7 +202,7 @@ bindsym $mod+p exec --no-startup-id "grimshot savecopy area $HOME/Pictures/Scree
 #bindsym $mod+p exec --no-startup-id "shotman -C --capture region"
 
 # add a keybind for launching htop to monitor system stats
-bindsym Mod1+h exec --no-startup-id "foot -e htop"
+bindsym Mod1+h exec --no-startup-id "alacritty -e htop"
 
 # add a keybind for launching one of our default browsers
 # select which one you want this keybinding to effect by uncommenting your preferred browser option
