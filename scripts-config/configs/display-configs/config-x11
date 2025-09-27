@@ -122,7 +122,7 @@ exec --no-startup-id lxpolkit
 #exec --no-startup-id xcompmgr
 # - - - testing picom
 # - - - use the `-c` flag if we want shadowing
-exec --no-startup-id "picom -f -c -e 0.9 --corner-radius 3"
+exec --no-startup-id "picom -f -e 0.9 --corner-radius 3"
 ##############################
 
 # Use pactl to adjust volume in PulseAudio.
@@ -138,12 +138,12 @@ floating_modifier $mod
 # start a terminal.
 # Our installed terminal emulators are "sakura", "foot", "ghostty", "st", "gnome-terminal", "mate-terminal", "kitty" and "alacritty."
 # Choose which one works best for you!
-bindsym $mod+Return exec sakura
+#bindsym $mod+Return exec sakura
 #bindsym $mod+Return exec foot
 #bindsym $mod+Return exec ghostty
 #bindsym $mod+Return exec st
 #bindsym $mod+Return exec kitty
-#bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec alacritty
 #bindsym $mod+Return exec gnome-terminal
 #bindsym $mod+Return exec mate-terminal
 
@@ -177,7 +177,7 @@ bindsym $mod+Shift+n exec --no-startup-id "dunstctl history-pop"
 bindsym $mod+c exec --no-startup-id "gsimplecal"
 
 # add a shortcut for popping out agenda/calenar (calcurse)
-bindsym Mod1+c exec --no-startup-id "st -e calcurse"
+bindsym Mod1+c exec --no-startup-id "alacritty -e calcurse"
 
 # add a keybinding for opening up a browser
 # we use `brave-browser-nightly`, `firefox-nightly`, and `chromium` regularly
@@ -198,7 +198,7 @@ bindsym $mod+p exec --no-startup-id "flameshot gui"
 #bindsym $mod+p exec --no-startup-id "grimshot copy area" 
 
 # add a keybind for launching htop to monitor system stats
-bindsym Mod1+h exec --no-startup-id "sakura -x htop"
+bindsym Mod1+h exec --no-startup-id "alacritty -x htop"
 
 # add a keybind for launching one of our default browsers
 # select which one you want this keybinding to effect by uncommenting your preferred browser option
@@ -390,6 +390,10 @@ exec "setxkbmap -layout us,de"
 ###########################################################
 default_border pixel 3
 
+# XXX: 	- - - Special Section For Local Machine - - -
+# You can use this section for special commands you might need to run on your local machine.
+# For uniformity, please don't commit anything below this line to the public repo.
+###################################
 # XXX: 	- - - Special Section For Local Machine - - -
 # You can use this section for special commands you might need to run on your local machine.
 # For uniformity, please don't commit anything below this line to the public repo.
