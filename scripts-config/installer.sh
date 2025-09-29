@@ -111,7 +111,7 @@ make_folders () {
 install_wired_pkgs () {	
 	# this function updates and intalls the needed deps for wiredWM
 	sudo apt-get update
-	sudo apt-get install -y i3 i3lock-fancy nitrogen pamixer opendoas pulseaudio-utils xcompmgr picom waybar slock alacritty fonts-inter xterm arandr nemo rofi xss-lock feh volumeicon-alsa polybar blueman dunst flameshot meteo-qt pasystray ffmpeg kitty stterm surf conky-all suckless-tools lxpolkit lxappearance vim nnn cmus xscreensaver amfora sway swaylock swayidle swaybg grimshot xdg-desktop-portal-wlr qt5ct tty-clock wf-recorder sakura foot gsimplecal calcurse pavucontrol yaru-theme-gtk yaru-theme-icon glow pipx gnome-characters tmux shotman nwg-look fonts-jetbrains-mono fonts-firacode fonts-noto wdisplays papirus-icon-theme fonts-font-awesome fonts-material-design-icons-iconfont
+	sudo apt-get install -y i3 i3lock-fancy nitrogen pamixer opendoas pulseaudio-utils xcompmgr picom waybar slock alacritty fonts-inter xterm arandr nemo rofi xss-lock feh volumeicon-alsa polybar blueman dunst flameshot meteo-qt pasystray ffmpeg kitty stterm surf conky-all suckless-tools lxpolkit lxappearance vim nnn cmus xscreensaver amfora sway swaylock swayidle swaybg grimshot xdg-desktop-portal-wlr qt5ct tty-clock wf-recorder sakura foot gsimplecal calcurse pavucontrol yaru-theme-gtk yaru-theme-icon glow pipx gnome-characters tmux shotman nwg-look fonts-jetbrains-mono fonts-firacode fonts-noto wdisplays papirus-icon-theme fonts-font-awesome fonts-material-design-icons-iconfont bibata-cursor-theme
 } 
 apply_configs () {
 	# this function applies the configs for: 
