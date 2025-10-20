@@ -14,7 +14,6 @@ original_removal () {
 	killall swaybg
 }
 main () {
-	# TODO fill out logic here
 	notifier
 	new_wall=$(zenity --file-selection --title "$nw | Select a new wallpaper:" --filename="$HOME/wiredWM/wp/")
 	original_removal
