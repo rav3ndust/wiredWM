@@ -100,7 +100,7 @@ Some of our other major components are:
 
 ### are we wayland yet?
 
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/21ecaac1-8847-41be-9ee7-df156854a7b2" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/d93fb6e8-3d72-4118-9986-8ee0c95a8f6f" />
 
 As mentioned above, work has been going on to move our configs over to Sway, for Wayland. 
 
@@ -108,7 +108,7 @@ I want to make sure everything works as flawlessly on the Wayland version of wir
 
  To that end, I will have a different repo for the Wayland version of wiredWM, so that anyone can easily grab the x11 or wayland version, whichever they prefer based on their needs.
 
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/5d7a0e51-d398-4d0b-9fa7-ab2b1afa0802" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/0d2ecae9-1688-4a7d-83a5-9812bac3a98d" />
 
 We're using `waybar` in place of `polybar` in our Wayland configuration.
 
@@ -116,11 +116,11 @@ I've put a lot of work into our `waybar` config. It has clickable modules, custo
 
 `xdg-desktop-portal-wlr` is also included in the installation script, for apps that use portals.
 
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/4936b0c4-5716-4926-a77c-e0e566b7db08" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/0555967c-d0ac-485a-b578-1c07708cf18d" />
 
 We want it to be 1:1 with the x11 version, so when I'm comfy with using it as my daily driver for awhile, I'll have a new repo up and linked here! The repo you're currently in, of course, will not be going anywhere. The x11 version is going to be being kept around for a long time to come.
 
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/89c6d3a0-d267-42f8-9bd6-cd6fcf307ace" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/9bb831c0-6080-4263-91c8-2308de58de31" />
 
 ### Wayland references
 
