@@ -1,17 +1,30 @@
+/* THEME NAME: nightshadeNeon-Glitch */
 /* main stylesheet for wiredWM's 'waybar configuration'
  *	- by rav3ndust
  * a copy of this file should live at /etc/xdg/waybar/style.css */
 * {
-    font-size: 10px; /* Font size for better readability */ 
+    font-size: 10px;
     font-family: Noto Sans;
-    font-weight: bold; /* Make all text bold */
+    font-weight: bold;
 }
 
 window#waybar {
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.85), rgba(15, 15, 15, 0.8));
     color: #fdf6e3;
-    padding: -0;
-    margin: -0;
+    padding: 0;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    animation: neonPulse 5s infinite alternate; /* bar pulse */
+}
+
+@keyframes neonPulse {
+    from {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 0 0 10px rgba(128, 0, 128, 0.2);
+    }
+    to {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 0 0 15px rgba(128, 0, 128, 0.3);
+    }
 }
 
 #custom-right-arrow-dark,
@@ -35,109 +48,162 @@ window#waybar {
 #idle_inhibitor,
 #backlight,
 #power-profiles-daemon {
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-    border-radius: 10px; /* Rounded corners for pill effect */
-    padding: 4px 7px; /* Padding for a comfortable look */
-    margin: 0 3px; /* Margin between modules */
-    color: #00ffff; /* Default text color */
-    font-size: 10px; /* Ensure text size is consistent */
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(10, 10, 10, 0.85)); /* dark gradient */
+    border: 1px solid rgba(128, 0, 128, 0.4); /* darker neon pink border */
+    border-radius: 10px; /* pill shaped modules */
+    padding: 2px 5px;
+    margin: 0 8px;
+    color: #00ffff;
+    font-size: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), 0 0 8px rgba(128, 0, 128, 0.3);
+    animation: glitchText 4s infinite;
 }
 
-/* TESTING */ 
+@keyframes glitchText {
+    0% {
+        color: #00ffff; /* cyan */
+        text-shadow: 0 0 5px rgba(0, 255, 255, 0.5), 1px 1px 0 rgba(0, 0, 0, 0.2);
+    }
+    33% {
+        color: #ff10f0; /* neon pink */
+        text-shadow: 0 0 5px rgba(255, 20, 147, 0.5), -1px -1px 0 rgba(0, 0, 0, 0.2);
+    }
+    66% {
+        color: #39ff14; /* neon green */
+        text-shadow: 0 0 5px rgba(57, 255, 20, 0.5), 1px -1px 0 rgba(0, 0, 0, 0.2);
+    }
+    100% {
+        color: #00ffff; /* cyan */
+        text-shadow: 0 0 5px rgba(0, 255, 255, 0.5), -1px 1px 0 rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* TESTING */
 #custom-wired-launcher {
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
-    border-radius: 10px; /* Pill effect */
-    padding: 4px 7px; /* Comfortable padding */
-    margin: 0 3px; /* Spacing between modules */
-    color: #00ffff; /* Cyan to match other modules */
-    font-size: 12px; /* Slightly larger for emoji visibility */
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(10, 10, 10, 0.85));
+    border: 1px solid rgba(128, 0, 128, 0.4);
+    border-radius: 10px;
+    padding: 2px 5px;
+    margin: 0 8px;
+    color: #00ffff;
+    font-size: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), 0 0 8px rgba(128, 0, 128, 0.3);
+    animation: glitchText 4s infinite; /* Slower glitch animation */
 }
 /* END TESTING */
 
 #workspaces {
-    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1); /* Subtle inner shadow for depth */
+    box-shadow: inset 0 0 10px rgba(128, 0, 128, 0.2);
 }
 
 #workspaces button {
-    padding: 0px 8px; /* Padding for buttons */
-    color: #00ffff; /* Default text color */
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for buttons */
-    border-radius: 12px; /* Rounded corners for pill effect */
-    transition: background 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+    padding: 0px 6px;
+    color: #00ffff;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(10, 10, 10, 0.85));
+    border: 1px solid rgba(128, 0, 128, 0.4);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), 0 0 8px rgba(128, 0, 128, 0.3);
+    animation: glitchText 4s infinite;
 }
 
 #workspaces button.focused {
-    color: #ff10f0; /* Primary color for active workspace */
-    border: 2px solid #39ff14; /* Secondary color for active workspace border */
+    color: #ff10f0;
+    border: 2px solid #39ff14;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.7), 0 0 10px rgba(57, 255, 20, 0.4), inset 0 0 5px rgba(57, 255, 20, 0.3);
 }
 
 #workspaces button:hover {
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Subtle glow effect on hover */
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Optional: text shadow for depth */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.8), 0 0 20px rgba(128, 0, 128, 0.5);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 #workspaces button.inactive {
-    background: red; /* Inactive workspace background */
-    color: black; /* Inactive workspace text color */
+    background: linear-gradient(180deg, rgba(200, 0, 0, 0.9), rgba(150, 0, 0, 0.7));
+    color: black;
+    border: 1px solid rgba(255, 0, 0, 0.3);
 }
 
 #pulseaudio {
-    color: #ff10f0; /* Match main color scheme */
+    color: #ff10f0;
+    animation: glitchText 4s infinite;
 }
 
 #network {
-    background: rgba(0, 0, 0, 0.7); /* Match the transparency of other modules */
-    border-radius: 10px; /* Ensure rounded corners */
-    padding: 3px 7px; /* Match padding of other modules */
-    margin: 0 3px; /* Match margin of other modules */
-    color: #ff10f0; 
-    transition: color 0.3s; /* Smooth color transition for state changes */
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(10, 10, 10, 0.85));
+    border: 1px solid rgba(128, 0, 128, 0.4);
+    border-radius: 10px;
+    padding: 2px 5px;
+    margin: 0 8px;
+    color: #ff10f0;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), 0 0 8px rgba(128, 0, 128, 0.3);
+    animation: glitchText 4s infinite;
+}
+
+#network:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7), 0 0 15px rgba(128, 0, 128, 0.5);
 }
 
 #network.disconnected {
-    color: #ff3131; /* red for disconnected state to stand out */
+    color: #ff3131; /* red text for disconnected state */
+    border: 1px solid rgba(255, 0, 0, 0.3);
 }
 
-
 #memory {
-    color: #39ff14; /* Match main color scheme */
+    color: #39ff14;
+    animation: glitchText 4s infinite;
 }
 
 #cpu {
-    color: #000000; /* Match main color scheme */
+    color: #000000;
+    animation: glitchText 4s infinite;
 }
 
 #battery {
-    color: #ff10f0; /* Match main color scheme */
+    color: #ff10f0;
+    animation: glitchText 4s infinite;
 }
 
 #disk {
-    color: #ff10f0; /* Match main color scheme */
+    color: #ff10f0;
+    animation: glitchText 4s infinite;
 }
 
 #clock,
-#clock * { /* Target the clock and all its child elements */
-    color: #39ff14; /* Set clock color to #39ff14 */
-    font-weight: bold; /* Make clock text bold */
+#clock * {
+    color: #39ff14;
+    font-weight: bold;
+    animation: glitchText 4s infinite;
 }
 
 #idle_inhibitor {
-    color: #ff10f0; /* Pink neon to match elements like pulseaudio and battery */
+    color: #ff10f0;
+    animation: glitchText 4s infinite;
 }
 
 #backlight {
-    color: #39ff14; /* Green neon to match elements like memory and clock */
+    color: #39ff14;
+    animation: glitchText 4s infinite;
 }
 
 #power-profiles-daemon {
-    color: #ff10f0; /* Pink neon to match power-related elements like battery */
+    color: #ff10f0;
+    animation: glitchText 4s infinite;
 }
 
 #custom-power {
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
-    border-radius: 10px; /* Pill effect */
-    padding: 4px 7px; /* Comfortable padding */
-    margin: 0 3px; /* Spacing between modules */
-    color: #ff10f0; /* Pink neon to match power-related elements */
-    font-size: 12px; /* Slightly larger for emoji visibility */
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(10, 10, 10, 0.85));
+    border: 1px solid rgba(128, 0, 128, 0.4);
+    border-radius: 10px;
+    padding: 2px 5px;
+    margin: 0 8px;
+    color: #ff10f0;
+    font-size: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), 0 0 8px rgba(128, 0, 128, 0.3);
+    animation: glitchText 4s infinite;
+}
+
+#custom-power:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7), 0 0 15px rgba(128, 0, 128, 0.5);
 }
