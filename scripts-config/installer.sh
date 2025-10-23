@@ -213,7 +213,12 @@ apply_configs () {
    		# applies the learning script for showing keybindings as a helpful resource (accessible by pressing $mod+Shift+H)
 	    local learn_script="learn.sh"
 	    chmod +x $learn_script; sudo cp $learn_script /usr/bin/learn
-	 }
+	}
+	copy_naviWalls () {
+		# applies the naviWalls script, which allows for easily switching wallpapers through a GUI
+		local nw_script="naviWalls.sh"
+		chmod +x $nw_script; sudo cp $nw_script /usr/bin/naviWalls
+	}
     copy_power_menu () {
 	    # applies the wired_power_menu script to /usr/bin/power_menu
 		local power_menu="$HOME/wiredWM/scripts-config/wired_power_menu.sh"
@@ -222,6 +227,7 @@ apply_configs () {
     apply_environment
    	apply_nslock
 	copy_learn_script
+	copy_naviWalls
     copy_power_menu
 }
 setup_doas () {
