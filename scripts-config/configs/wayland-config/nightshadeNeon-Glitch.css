@@ -1,0 +1,211 @@
+/* theme name: nightshadeNeon-Glitch */
+/* this waybar stylesheet brings in a purple background to the pill modules, 
+    and we have a nice "RGB pulse" going on throughout the modules */
+/* current default stylesheet for wiredWM's waybar config
+ *	- by rav3ndust
+ * a copy of this file should live at /etc/xdg/waybar/style.css */
+* {
+    font-size: 10px;
+    font-family: Noto Sans;
+    font-weight: bold;
+}
+
+window#waybar {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.85), rgba(15, 15, 15, 0.8));
+    color: #fdf6e3;
+    padding: 0;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    animation: neonPulse 5s infinite alternate; /* bar pulse */
+}
+
+@keyframes neonPulse {
+    from {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 0 0 10px rgba(128, 0, 128, 0.2);
+    }
+    to {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 0 0 15px rgba(128, 0, 128, 0.3);
+    }
+}
+
+#custom-right-arrow-dark,
+#custom-left-arrow-dark {
+    color: #1a1a1a;
+}
+#custom-right-arrow-light,
+#custom-left-arrow-light {
+    color: #292b2e;
+    background: #1a1a1a;
+}
+
+#workspaces,
+#clock,
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#disk,
+#tray,
+#idle_inhibitor,
+#backlight,
+#power-profiles-daemon {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(10, 10, 10, 0.85)); /* dark gradient */
+    border: 1px solid rgba(128, 0, 128, 0.4); /* darker neon pink border */
+    border-radius: 10px; /* pill shaped modules */
+    padding: 2px 5px;
+    margin: 0 8px;
+    color: #00ffff;
+    font-size: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), 0 0 8px rgba(128, 0, 128, 0.3);
+    animation: glitchText 4s infinite;
+}
+
+@keyframes glitchText {
+    0% {
+        color: #00ffff; /* cyan */
+        text-shadow: 0 0 5px rgba(0, 255, 255, 0.5), 1px 1px 0 rgba(0, 0, 0, 0.2);
+    }
+    33% {
+        color: #ff10f0; /* neon pink */
+        text-shadow: 0 0 5px rgba(255, 20, 147, 0.5), -1px -1px 0 rgba(0, 0, 0, 0.2);
+    }
+    66% {
+        color: #39ff14; /* neon green */
+        text-shadow: 0 0 5px rgba(57, 255, 20, 0.5), 1px -1px 0 rgba(0, 0, 0, 0.2);
+    }
+    100% {
+        color: #00ffff; /* cyan */
+        text-shadow: 0 0 5px rgba(0, 255, 255, 0.5), -1px 1px 0 rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* TESTING */
+#custom-wired-launcher {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(10, 10, 10, 0.85));
+    border: 1px solid rgba(128, 0, 128, 0.4);
+    border-radius: 10px;
+    padding: 2px 5px;
+    margin: 0 8px;
+    color: #00ffff;
+    font-size: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), 0 0 8px rgba(128, 0, 128, 0.3);
+    animation: glitchText 4s infinite; /* Slower glitch animation */
+}
+/* END TESTING */
+
+#workspaces {
+    box-shadow: inset 0 0 10px rgba(128, 0, 128, 0.2);
+}
+
+#workspaces button {
+    padding: 0px 6px;
+    color: #00ffff;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(10, 10, 10, 0.85));
+    border: 1px solid rgba(128, 0, 128, 0.4);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), 0 0 8px rgba(128, 0, 128, 0.3);
+    animation: glitchText 4s infinite;
+}
+
+#workspaces button.focused {
+    color: #ff10f0;
+    border: 2px solid #39ff14;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.7), 0 0 10px rgba(57, 255, 20, 0.4), inset 0 0 5px rgba(57, 255, 20, 0.3);
+}
+
+#workspaces button:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.8), 0 0 20px rgba(128, 0, 128, 0.5);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+#workspaces button.inactive {
+    background: linear-gradient(180deg, rgba(200, 0, 0, 0.9), rgba(150, 0, 0, 0.7));
+    color: black;
+    border: 1px solid rgba(255, 0, 0, 0.3);
+}
+
+#pulseaudio {
+    color: #ff10f0;
+    animation: glitchText 4s infinite;
+}
+
+#network {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(10, 10, 10, 0.85));
+    border: 1px solid rgba(128, 0, 128, 0.4);
+    border-radius: 10px;
+    padding: 2px 5px;
+    margin: 0 8px;
+    color: #ff10f0;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), 0 0 8px rgba(128, 0, 128, 0.3);
+    animation: glitchText 4s infinite;
+}
+
+#network:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7), 0 0 15px rgba(128, 0, 128, 0.5);
+}
+
+#network.disconnected {
+    color: #ff3131; /* red text for disconnected state */
+    border: 1px solid rgba(255, 0, 0, 0.3);
+}
+
+#memory {
+    color: #39ff14;
+    animation: glitchText 4s infinite;
+}
+
+#cpu {
+    color: #000000;
+    animation: glitchText 4s infinite;
+}
+
+#battery {
+    color: #ff10f0;
+    animation: glitchText 4s infinite;
+}
+
+#disk {
+    color: #ff10f0;
+    animation: glitchText 4s infinite;
+}
+
+#clock,
+#clock * {
+    color: #39ff14;
+    font-weight: bold;
+    animation: glitchText 4s infinite;
+}
+
+#idle_inhibitor {
+    color: #ff10f0;
+    animation: glitchText 4s infinite;
+}
+
+#backlight {
+    color: #39ff14;
+    animation: glitchText 4s infinite;
+}
+
+#power-profiles-daemon {
+    color: #ff10f0;
+    animation: glitchText 4s infinite;
+}
+
+#custom-power {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(10, 10, 10, 0.85));
+    border: 1px solid rgba(128, 0, 128, 0.4);
+    border-radius: 10px;
+    padding: 2px 5px;
+    margin: 0 8px;
+    color: #ff10f0;
+    font-size: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), 0 0 8px rgba(128, 0, 128, 0.3);
+    animation: glitchText 4s infinite;
+}
+
+#custom-power:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7), 0 0 15px rgba(128, 0, 128, 0.5);
+}
