@@ -1,0 +1,145 @@
+/* theme name: nightshadeNeon */
+/* a nice and minimal config following our nightshadeNeon color scheme */ 2
+/* original stylesheet for wiredWM's waybar config
+ *	- by rav3ndust
+ * a copy of this file should live at /etc/xdg/waybar/style.css */
+* {
+    font-size: 10px; 
+    font-family: Noto Sans;
+    font-weight: bold; 
+}
+
+window#waybar {
+    background: rgba(0, 0, 0, 0.7); /* semi-transparent black background */
+    color: #fdf6e3;
+    padding: -0;
+    margin: -0;
+}
+
+#custom-right-arrow-dark,
+#custom-left-arrow-dark {
+    color: #1a1a1a;
+}
+#custom-right-arrow-light,
+#custom-left-arrow-light {
+    color: #292b2e;
+    background: #1a1a1a;
+}
+
+#workspaces,
+#clock,
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#disk,
+#tray,
+#idle_inhibitor,
+#backlight,
+#power-profiles-daemon {
+    background: rgba(0, 0, 0, 0.7); 
+    border-radius: 10px; /* rounded corners for pill effect */
+    padding: 4px 7px; /* comfortable padding */
+    margin: 0 3px; /* margins between modules */
+    color: #00ffff; /* default text color */
+    font-size: 10px; /* ensures text size is consistent */
+}
+
+/* TESTING */
+#custom-wired-launcher {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px; 
+    padding: 4px 7px; 
+    margin: 0 3px; 
+    color: #00ffff; 
+    font-size: 12px; 
+}
+/* END TESTING */
+
+#workspaces {
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1); 
+}
+
+#workspaces button {
+    padding: 0px 8px; /* padding for buttons */
+    color: #00ffff; 
+    background: rgba(0, 0, 0, 0.7); 
+    border-radius: 12px; 
+    transition: background 0.3s, box-shadow 0.3s; /* smooth transitions for hover effects */
+}
+
+#workspaces button.focused {
+    color: #ff10f0; /* main color for active workspace */
+    border: 2px solid #39ff14; /* secondary color for active workspace border */
+}
+
+#workspaces button:hover {
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* white glow effect on hover */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* text shadow for depth */
+}
+
+#workspaces button.inactive {
+    background: red; 
+    color: black; 
+}
+
+#pulseaudio {
+    color: #ff10f0; /* matches main color scheme */
+}
+
+#network {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px; 
+    padding: 3px 7px; 
+    margin: 0 3px; 
+    color: #ff10f0;
+    transition: color 0.3s; 
+}
+
+#network.disconnected {
+    color: #ff3131; 
+}
+
+
+#memory {
+    color: #39ff14; 
+}
+
+#cpu {
+    color: #000000; 
+}
+
+#battery {
+    color: #ff10f0; 
+}
+
+#disk {
+    color: #ff10f0; 
+}
+
+#clock,
+#clock * { 
+    color: #39ff14; 
+    font-weight: bold; 
+}
+
+#idle_inhibitor {
+    color: #ff10f0; 
+}
+
+#backlight {
+    color: #39ff14; 
+}
+
+#power-profiles-daemon {
+    color: #ff10f0; 
+}
+
+#custom-power {
+    background: rgba(0, 0, 0, 0.7); 
+    border-radius: 10px; 
+    padding: 4px 7px; 
+    margin: 0 3px; 
+    color: #ff10f0; 
+    font-size: 12px; 
+}
