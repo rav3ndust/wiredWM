@@ -1,6 +1,7 @@
 # wired config
+# ( - this file should live at .config/sway/config )
 # this file won't be overwritten, so feel free to edit it as you see fit!
-# for reference, please see these links: 
+# for reference, please see these links:
 #	- https://rav3ndust.xyz/wiki/wiredWM.html
 #	- https://github.com/rav3ndust/wiredWM
 #	- https://codeberg.org/rav3ndust/wiredWM
@@ -20,9 +21,13 @@ exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK PATH
 exec_always --no-startup-id systemctl --user set-environment PATH="/usr/games:$HOME/.local/bin:$PATH"
 # set wallpaper
 exec swaybg -i $HOME/wiredWM/wp/synthwavelain.jpeg
-#exec swaybg -i $HOME/wiredWM/wp/lain4.png &
-# testing setting mouse theme
-seat * xcursor_theme Yaru 
+#exec swaybg -i $HOME/wiredWM/wp/SElain12.png
+# setting mouse theme
+# a few by default to choose from:
+# Adwaita, Yaru, and Bibata (pick your favorite!)
+#seat * xcursor_theme Adwaita
+seat * xcursor_theme Yaru
+#seat * xcursor_theme Bibata-Original-Ice
 # make windows float or tile by default.
 # comment/uncomment the below line to disable/enable tiling by default.
 #for_window [class="[.]*"] floating enable
@@ -58,7 +63,7 @@ client.unfocused 	#000000   #000000    #ff3131
 #font pango:Ubuntu 10
 #font pango:Cantarell 10
 #font pango:Inter Bold 10
-font pango:Noto Sans 10 
+font pango:Noto Sans 10
 #font pango:Quicksand 10
 #font pango:Poppins 10
 #font pango:Quicksand Medium Regular 10
@@ -82,7 +87,7 @@ font pango:Noto Sans 10
 exec swayidle -w \
     timeout 900 'nslock &' \
     timeout 1200 'systemctl suspend' \
-    before-sleep 'nslock' 
+    before-sleep 'nslock'
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -198,11 +203,15 @@ bindsym Caps_Lock exec --no-startup-id "notify-send 'wired helper' 'Caps Lock pr
 # add a keybinding for quick screenshots (currently using `grimshot` for this functionality by default)
 # also have flameshot and shotman here as options. uncomment the one you'd like to use on wiredWM!
 #bindsym $mod+p exec --no-startup-id "flameshot gui"
-bindsym $mod+p exec --no-startup-id "grimshot savecopy area $HOME/Pictures/Screenshots/$(date -Ins).png --notify" 
+bindsym $mod+p exec --no-startup-id "grimshot savecopy area $HOME/Pictures/Screenshots/$(date -Ins).png --notify"
 #bindsym $mod+p exec --no-startup-id "shotman -C --capture region"
 
 # add a keybind for launching htop to monitor system stats
 bindsym Mod1+h exec --no-startup-id "alacritty -e htop"
+
+# add a keybind for opening up a scratchpad for note-taking, jotting down ideas, etc.
+# this will spawn vim writing a disposable file in /tmp/
+bindsym Mod1+s exec --no-startup-id "alacritty -e nvim /tmp/$(date -I).txt"
 
 # add a keybind for launching one of our default browsers
 # select which one you want this keybinding to effect by uncommenting your preferred browser option
