@@ -33,8 +33,8 @@ for_window [class="^.*"] border pixel 4
 # - - for gaps - -
 #####################################
 # - - smart gaps/borders.
-smart_gaps on
-smart_borders on
+#smart_gaps on
+#smart_borders on
 # - - manual gaps.
 # You can manually adjust their values below, if you choose to set them.
 gaps inner 3
