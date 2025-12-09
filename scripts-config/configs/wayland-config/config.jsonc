@@ -20,10 +20,10 @@
         "pulseaudio",
         "network",
         "battery",
-        //"power-profiles-daemon",
         "backlight",
         "idle_inhibitor",
-        "tray",
+        "power-profiles-daemon",
+		"tray",
         "custom/power"
     ],
 
@@ -45,7 +45,7 @@
     "clock#3": {
         //"format": "{:%Y/%m/%d}",
         "format": "{:%b %d}",
-		"tooltip": false, 
+	"tooltip": false,
         "on-click": "gsimplecal"
     },
 
@@ -64,18 +64,18 @@
         "on-click": "pamixer -t",
         "on-click-right": "pavucontrol"
     },
-    // - - - XXX testing section XXX - - - 
+    // - - - XXX testing section XXX - - -
     // this is a 'testing' network module. if it doesn't work out right, we'll remove it
     "network": {
             "format-wifi": "📶 {signalStrength}%",
             "format-ethernet": "🌐 {ifname}",
             "format-disconnected": "⚠ Disconnected",
             "tooltip-format": "Wireless status -  {ifname}: {ipaddr}/{cidr}",
-	   "tooltip-format-wifi": "{essid}",
+	    "tooltip-format-wifi": "{essid}",
             "on-click": "st -e nmtui",
             "interval": 5
         },
-    // - - - XXX end testing section XXX - - - 
+    // - - - XXX end testing section XXX - - -
     "memory": {
         "interval": 5,
         "format": "Mem {}%"
@@ -105,7 +105,7 @@
         "path": "/"
     },
     "tray": {
-        "icon-size": 20 
+        "icon-size": 20
     },
     "custom/wired-launcher": {
         "format": "▽",
