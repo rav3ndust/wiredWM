@@ -4,6 +4,7 @@
  * a copy of this file should live at /etc/xdg/waybar/style.css */
 * {
     font-size: 10px;
+    /* font-family: Cascadia Code; */
     font-family: Noto Sans;
     font-weight: bold;
 }
