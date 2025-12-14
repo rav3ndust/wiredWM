@@ -265,6 +265,11 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# make a window sticky
+# the window will follow you from workspace to workspace when enabled.
+# press the keybind to make a window sticky, and press it again to un-stick it.
+bindsym $mod+Shift+s sticky toggle
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
