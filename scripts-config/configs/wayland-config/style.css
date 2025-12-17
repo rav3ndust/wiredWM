@@ -89,7 +89,7 @@ window#waybar {
     color: #00ffff;
     font-size: 12px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), 0 0 8px rgba(128, 0, 128, 0.3);
-    animation: glitchText 4s infinite; /* Slower glitch animation */
+    animation: glitchText 4s infinite; /* slower glow animation */
 }
 /* END TESTING */
 
