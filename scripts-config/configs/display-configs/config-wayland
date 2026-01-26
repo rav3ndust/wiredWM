@@ -81,6 +81,11 @@ font pango:Noto Sans 10
 #exec --no-startup-id sh -c 'eval $(/usr/bin/gnome-keyring-daemon --start --components=secrets,pkcs11,ssh) && export SSH_AUTH_SOCK'
 #exec --no-startup-id "gnome-keyring-daemon --components=secrets"
 
+# turn on touchpad and tap-to-click for laptop  use
+input "type:touchpad" {
+	tap enabled
+}
+
 # - - - use this for lock/hibernate on wayland
 # screenlock and suspend (wayland)
 # uses `nslock`, our wrapper around `swaylock`
