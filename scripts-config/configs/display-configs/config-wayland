@@ -1,4 +1,4 @@
-# wired config
+# wired config ( wayland )
 # ( - this file should live at .config/sway/config )
 # this file won't be overwritten, so feel free to edit it as you see fit!
 # for reference, please see these links:
