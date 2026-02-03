@@ -33,7 +33,7 @@
     },
 
     "clock#1": {
-        "format": "{:%a}",
+        "format": "{:%A}",
         "tooltip": false,
         "on-click": "alacritty -e calcurse"
     },
