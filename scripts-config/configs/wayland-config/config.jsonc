@@ -44,8 +44,8 @@
     },
     "clock#3": {
         //"format": "{:%Y/%m/%d}",
-        "format": "{:%b %d}",
-	"tooltip": false,
+        "format": "{:%B %d}",
+	    "tooltip": false,
         "on-click": "gsimplecal"
     },
 
