@@ -34,7 +34,7 @@ seat * xcursor_theme Yaru
 
 # - - for window title bars - -
 # (for no titlebars (except when windows are tabbed/stacked)):
-for_window [class="^.*"] border pixel 4
+for_window [class="^.*"] border pixel 2
 # (for always-on titlebars:
 #for_window [class="^.*"] border normal 4
 # > select which option for borders you want by commenting the appropriate options out
