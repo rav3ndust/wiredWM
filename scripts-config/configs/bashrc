@@ -18,3 +18,6 @@ alias ls='ls --color=auto'
 alias ll='ls -la --color=auto'
 alias la='ls -A --color=auto'
 alias grep='grep --color=auto'
+
+# QoL aliases
+alias cls="clear"
