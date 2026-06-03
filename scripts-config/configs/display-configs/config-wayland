@@ -28,7 +28,10 @@ exec swaybg -i $HOME/wiredWM/wp/synthwavelain.jpeg
 #exec swaybg -i $HOME/wiredWM/wp/SElain12.png
 
 # setting mouse theme
+# we have two options to choose from: Yaru and Adwaita. 
+# both look nice - simply uncomment the one you want to use (yaru is default)
 seat * xcursor_theme Yaru
+# seat * xcursor_theme Adwaita
 
 # make windows float or tile by default.
 #for_window [class="[.]*"] floating enable
