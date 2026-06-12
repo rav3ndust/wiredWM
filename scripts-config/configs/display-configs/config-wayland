@@ -61,10 +61,10 @@ input "type:touchpad" {
 }
 
 # screenlock and suspend
-exec swayidle -w \
-    timeout 900 'nslock &' \
-    timeout 1200 'systemctl suspend' \
-    before-sleep 'nslock'
+exec_always swayidle -w \
+    timeout 600 'nslock' \
+    timeout 900 'systemctl suspend' \
+    before-sleep 'nslock' &
 
 exec --no-startup-id sh -c "sleep 1 && blueman-applet &"
 exec --no-startup-id dunst
@@ -195,7 +195,7 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# bar config (default: our waybar)
+# Bar
 bar {
     position top
     swaybar_command waybar
