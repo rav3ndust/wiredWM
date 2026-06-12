@@ -24,8 +24,9 @@ exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK PATH
 exec_always --no-startup-id systemctl --user set-environment PATH="/usr/games:$HOME/.local/bin:$PATH"
 
 # set wallpaper
-exec swaybg -i $HOME/wiredWM/wp/synthwavelain.jpeg
+#exec swaybg -i $HOME/wiredWM/wp/synthwavelain.jpeg
 #exec swaybg -i $HOME/wiredWM/wp/SElain12.png
+exec swaybg -i $HOME/wiredWM/wp/SElain3.jpg
 
 # setting mouse theme
 # we have two options to choose from: Yaru and Adwaita. 
