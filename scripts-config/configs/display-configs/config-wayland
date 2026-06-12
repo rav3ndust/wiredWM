@@ -60,11 +60,13 @@ input "type:touchpad" {
     tap enabled
 }
 
-# screenlock and suspend
-exec_always swayidle -w \
-    timeout 600 'nslock' \
-    timeout 900 'systemctl suspend' \
-    before-sleep 'nslock' &
+# - - - use this for lock/hibernate on wayland
+# screenlock and suspend (wayland)
+# uses `nslock`, our wrapper around `swaylock`
+exec swayidle -w \
+    timeout 900 'nslock &' \
+    timeout 1200 'systemctl suspend' \
+    before-sleep 'nslock'
 
 exec --no-startup-id sh -c "sleep 1 && blueman-applet &"
 exec --no-startup-id dunst
@@ -217,3 +219,4 @@ exec "setxkbmap -layout us,de"
 
 # XXX - - - Sway-specific Things - - -
 default_border pixel 3
+ 
