@@ -89,6 +89,10 @@ bindsym $mod+Return exec alacritty
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# bindings for turning gaps on and off
+bindsym $mod+g exec --no-startup-id "swaymsg 'gaps inner 3; gaps outer 3' && notify-send 'wired helper' 'Gaps enabled.'"
+bindsym $mod+Shift+g exec --no-startup-id "swaymsg 'gaps inner 0; gaps outer 0' && notify-send 'wired helper' 'Gaps disabled.'"
+
 # launcher
 bindsym $mod+d exec dmenu_run -fn "NotoSans-10" -nb black -nf pink -sb green -sf red -p "nightshade - run command: "
 bindsym $mod+Shift+a exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -fn "NotoSans-10" -i -nb black -nf pink -sb green -sf red -p "nightshade - Applications List: "'
