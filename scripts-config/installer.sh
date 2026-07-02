@@ -21,9 +21,7 @@
 # - we use *feh* for handling wallpapers through CLI.
 # - we use *arandr* for graphical display management.
 # - we use *volumeicon* for a GUI-friendly way of volume management.
-# - we use *kitty* and *stterm* for lightweight terminals.
-#	- note that stterm will be better for older machines.
-#	- users can set their favorite terminal in the i3 config file.
+# - we use *alacritty* and *kitty* as our main terminal emulators (alacritty is default)
 # - we have custom scripts built on top of surf browser called "nightsurf"
 # - we also have a custom conky, so we need the *conky* package.
 # - we use *vim* for text editing.
