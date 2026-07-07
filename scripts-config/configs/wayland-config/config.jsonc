@@ -32,7 +32,21 @@
 
     "sway/workspaces": {
         "disable-scroll": false,
-        "format": "{name}"
+        // XXX testing roman numerals as workspace numbers.
+		//"format": "{name}"
+		"format": "{icon}",
+		"format-icons": {
+			"1": "I",
+			"2": "II",
+			"3": "III",
+			"4": "IV",
+			"5": "V",
+			"6": "VI",
+			"7": "VII",
+			"8": "VIII",
+			"9": "IX",
+			"10": "X"
+		}
     },
 
     "clock#1": {
@@ -47,7 +61,7 @@
     },
     "clock#3": {
         //"format": "{:%Y/%m/%d}",
-        "format": "{:%B %d}",
+        "format": "{:%d %B}",
 	"tooltip": false, 
         "on-click": "gsimplecal"
     },
