@@ -108,7 +108,7 @@ bindsym $mod+p exec --no-startup-id "grimshot savecopy area $HOME/Pictures/Scree
 bindsym Mod1+h exec --no-startup-id "alacritty -e htop"
 bindsym Mod1+s exec --no-startup-id "alacritty -e nvim /tmp/$(date -I).txt"
 bindsym Mod1+b exec --no-startup-id "firefox-nightly"
-bindsym Mod1+e exec --no-startup-id "gnome-characters"
+bindsym Mod1+e exec --no-startup-id "remoji"
 
 # change focus
 bindsym $mod+j focus left
