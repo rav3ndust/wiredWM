@@ -222,11 +222,17 @@ apply_configs () {
 		local power_menu="$HOME/wiredWM/scripts-config/wired_power_menu.sh"
         chmod +x $power_menu; sudo cp $power_menu /usr/bin/power_menu
 	}
+	copy_remoji () {
+		# applies the remoji script to /usr/bin/remoji (for emoji support in wiredWM)
+		local re="$HOME/wiredWM/scripts-config/remoji/remoji.sh"
+		chmod +x $re; sudo cp $re /usr/bin/remoji
+	}
     apply_environment
    	apply_nslock
 	copy_learn_script
 	copy_naviWalls
     copy_power_menu
+	copy_remoji
 }
 setup_doas () {
 	# sets up 'opendoas': a great alternative to 'sudo'
