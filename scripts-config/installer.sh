@@ -2,7 +2,7 @@
 #set -euo pipefail
 ########################################################
 # installer.sh -> for wiredWM
-#	- by @rav3ndust (https://github.com/rav3ndust.xyz)
+#	- by @rav3ndust (https://github.com/rav3ndust)
 #	( NOTE: This version of the script is for Debian-based installations.)
 # This is the installer script for wiredWM. 
 # Important info for config files: 
