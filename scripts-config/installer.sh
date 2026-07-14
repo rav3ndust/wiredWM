@@ -48,10 +48,11 @@
 # - *swaybg* handles what nitrogen normally would, backgrounds/wallpapers
 # - *waybar*, heavily configured, handles our status bar needs
 # - *grimshot* and *flameshot* are both here
-# - *calcurse can be used by clicking on the date in waybar
+# - *calcurse* can be used by clicking on the date in waybar
 # - *xdg-desktop-portal-wlr* handles wlroots desktop portals
 # - we have our wrapper around *swaylock* called *nslock* which is a custom lockscreen
 # - we include *wf-recorder* for recording the screen
+# - *wl-clipboard* as a CLI interface to wayland clipboard
 ########################################################
 WIRED_X11_CONFIG="$HOME/wiredWM/scripts-config/configs/display-configs/config-x11"
 WIRED_WAYLAND_CONFIG="$HOME/wiredWM/scripts-config/configs/display-configs/config-wayland"
