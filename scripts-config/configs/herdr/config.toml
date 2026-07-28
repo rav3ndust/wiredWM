@@ -1,0 +1,46 @@
+[theme]
+# naviOS/protocol7 - nightshadeNeon (herdr) 
+# uses our nightshadeNeon colors
+# we've modified the base configuration and theme
+# ( place: $HOME/.config/herdr/config.toml )
+
+name = "terminal"
+
+[theme.custom]
+panel_bg = "#0f0f0f"
+accent = "#ff10f0"
+green = "#39ff14"
+red = "#ff6188"
+
+[keys]
+prefix = "ctrl+space"
+close_pane = "prefix+shift+q"
+zoom = "prefix+f"
+new_tab = "prefix+enter"
+split_horizontal = "prefix+h"
+split_vertical = "prefix+v"
+focus_pane_left = "prefix+left"
+focus_pane_down = "prefix+down"
+focus_pane_up = "prefix+up"
+focus_pane_right = "prefix+right"
+resize_mode = "prefix+r"
+
+[[keys.command]]
+key = "prefix+shift+left"
+type = "shell"
+command = "herdr pane swap --direction left"
+
+[[keys.command]]
+key = "prefix+shift+right"
+type = "shell"
+command = "herdr pane swap --direction right"
+
+[[keys.command]]
+key = "prefix+shift+up"
+type = "shell"
+command = "herdr pane swap --direction up"
+
+[[keys.command]]
+key = "prefix+shift+down"
+type = "shell"
+command = "herdr pane swap --direction down"
