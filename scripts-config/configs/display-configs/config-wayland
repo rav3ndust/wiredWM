@@ -14,7 +14,7 @@
 #     ##    ##  ########    ####    ########                   ~
 #     ##    ##    ###.##    :##:    ######## 		           ~
 #                                            		           ~	
-#                                            		           ~	
+#    ( - l e t s - a l l - l o v e - l a i n - )               ~	
 #                                            		           ~	
 #                                            		           ~
 ################################################################
@@ -84,7 +84,7 @@ input "type:touchpad" {
 # - - - use this for lock/hibernate on wayland
 # screenlock and suspend (wayland)
 # uses `nslock`, our wrapper around `swaylock`
-exec swayidle \
+exec swayidle -w \
     timeout 600 'nslock' \
     timeout 900 'systemctl suspend' \
     before-sleep 'nslock'
