@@ -2,7 +2,7 @@
 # nslock
 #   - by rav3ndust (xvoidsx)
 # ( like i3lock-fancy, but for wayland )
-# ( specifically written for naviOS )
+# ( written for naviOS - hack it how you want! )
 # XXX requires: grim, imagemagick (magick), swaylock, fonts-noto, wlr-randr, jq
 #################################################################################
 set -euo pipefail
@@ -97,3 +97,4 @@ swaylock "${IMAGES[@]}" \
   	--key-hl-color "$CYAN" \
   	--bs-hl-color "$RED" \
   	--caps-lock-key-hl-color "$PINK"
+# - - - - - |
