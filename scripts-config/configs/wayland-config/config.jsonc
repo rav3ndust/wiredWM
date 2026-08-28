@@ -20,13 +20,14 @@
         "clock#3"
     ],
     "modules-right": [
-        "pulseaudio",
+        "custom/weather",
+	"pulseaudio",
         "network",
         "battery",
         "backlight",
         "idle_inhibitor",
         "power-profiles-daemon",
-		"tray",
+	"tray",
         "custom/power"
     ],
 
@@ -63,7 +64,13 @@
         //"format": "{:%Y/%m/%d}",
         "format": "{:%d %B}",
 	"tooltip": false, 
-        "on-click": "gsimplecal"
+        "on-click": "navi-calendar"
+    },
+    "custom/weather": {
+        "exec": "python3 /usr/share/naviOS/scripts/weather-bar.py",
+        "interval": 3600,
+        "on-click": "navi-weather",
+        "tooltip": false
     },
 
     "pulseaudio": {
@@ -89,7 +96,7 @@
             "format-disconnected": "⚠ Disconnected",
             "tooltip-format": "Wireless status -  {ifname}: {ipaddr}/{cidr}",
 	    "tooltip-format-wifi": "{essid}",
-            "on-click": "st -e nmtui",
+            "on-click": "navi-network",
             "interval": 30 
         },
     // - - - XXX end testing section XXX - - - 
@@ -125,8 +132,9 @@
         "icon-size": 20 
     },
     "custom/wired-launcher": {
-        "format": "▽",
-        "on-click": "rofi -show combi -combi -modi window,drun,run modi combi",
+        //"format": "▽",
+        "format": "∅",
+	"on-click": "rofi -show combi -combi -modi window,drun,run modi combi",
         "tooltip": true,
 		"tooltip-format": "open Wired launcher"	
     },
