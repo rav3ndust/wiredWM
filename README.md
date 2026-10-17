@@ -1,6 +1,10 @@
 # wired window manager
 =====
 
+> Note at this repository is not used anymore - it has moved into its entirety into its own distro, [navi](https://github.com/xvoidsx/navi). We invite you to give it a try if you love minimalism and the classic *Serial Experiments Lain* aesthetic we have been doing with this project for so long.
+>
+> [navi website](https://navi.xvoidsx.org] 🌙 [navi discord](https://discord.gg/Xtjjp55ymk)
+
 ### Welcome to the Wired
 
 **wiredWM** is built on top of [i3](https://i3wm.org/), which is a tiling window manager for [X11](https://www.x.org/). There is also work ongoing to bring the configs over to [Sway](https://swaywm.org/), for [Wayland](https://wayland.freedesktop.org/).
