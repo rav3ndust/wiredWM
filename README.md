@@ -1,9 +1,9 @@
 # wired window manager
 =====
 
-> Note at this repository is not used anymore - it has moved into its entirety into its own distro, [navi](https://github.com/xvoidsx/navi). We invite you to give it a try if you love minimalism and the classic *Serial Experiments Lain* aesthetic we have been doing with this project for so long.
+> Note that this repository is not used anymore - it has moved into its entirety into its own distro, [navi](https://github.com/xvoidsx/navi). We invite you to give it a try if you love minimalism and the classic *Serial Experiments Lain* aesthetic we have been doing with this project for so long.
 >
-> [navi website](https://navi.xvoidsx.org] 🌙 [navi discord](https://discord.gg/Xtjjp55ymk)
+> [navi website](https://navi.xvoidsx.org) 🌙 [navi discord](https://discord.gg/Xtjjp55ymk)
 
 ### Welcome to the Wired
 
